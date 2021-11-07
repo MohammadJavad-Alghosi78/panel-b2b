@@ -1,0 +1,233 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.min.css">
+  <title>تخفیف‌ها</title>
+</head>
+
+<body>
+  <div class="full-page">
+    <div class="sidebar">
+      <div class="sidebar__logo">
+        <img src="./images/setareaval.svg">
+      </div>
+      <ul class="sidebar__items">
+        <li class="sidebar-items__item" >
+          <img class="sidebar-icons" src="./images/dashboard-icon.svg">
+          <span class="item-text">داشبُرد</span>
+        </li>
+        <li class="sidebar-items__item" >
+          <img class="sidebar-icons" src="./images/Chart-black.svg">
+          <span class="item-text">گزارشات</span>
+        </li>
+        <li class="sidebar-items__item active" >
+          <img class="sidebar-icons active" src="./images/Discount-blue.svg">
+          <span class="item-text active-sidebar-title">تخفیف‌ها</span>
+        </li>
+        <li class="sidebar-items__item" >
+          <img class="sidebar-icons" src="./images/message-question.svg">
+          <span class="item-text">پشتیبانی</span>
+        </li>
+        <li class="sidebar-items__item" >
+          <img class="sidebar-icons" src="./images/code.svg">
+          <span class="item-text">مستندات فنی</span>
+        </li>
+      </ul>
+
+      <div class="personal-details">
+        <img class="person-image" src="./images/masih.JPG" width="40" height="40">
+        <h5 class="personal-details__name">محمدمهدی احمدی</h5>
+        <div class="personal-details__credit">
+          <span>اعتبار:</span>
+          <span>۲۴۳,۴۲۳,۸۴۹ ریال</span>
+        </div>
+
+      </div>
+      <button class="sidebar__logout-icon">
+        <img src="./images/Logout.svg" alt="">
+        <span class="logout-text">خروج از پنل</span>
+      </button>
+    </div>
+    <div class="page-content">
+      <header class="dektop-page-header">
+        <div class="desktop-page-header__breadcrumb">
+          <span class="home">خانه</span>
+          <img src="./images/Arrow - Left.svg" alt="">
+          <span>گزارشات</span>
+        </div>
+        <div class="desktop-page-header__date">
+          <div class="date__oclock">
+            <img src="./images/Time Square.svg" alt="">
+            <span>۱۰:۵۵:۰۰</span>
+          </div>
+          <div class="date__date">
+            <img src="./images/Calendar.svg" alt="">
+            <span>۱۴۰۰/۰۵/۲۲</span>
+          </div>
+        </div>
+        <div class="desktop-page-header__notif">
+          <img class="notif-icon" src="./images/Notification.svg" alt="">
+          <img class="person-image" src="./images/masih.JPG" alt="">
+        </div>
+      </header>
+      <div class="dashboard-container">
+        <header class="page-header">
+          <div class="menu-btn" onclick="handleShowMenu()">
+            <div class="menu-btn__burger"></div>
+          </div>
+          <div class="page-header__header-title">
+            <img src="./images/setareaval.svg" class="page-header__logo" alt="">
+            <h3 class="page-header__page-title">تخفیف‌ها</h3>
+          </div>
+          <img src="./images/masih.JPG" class="page-header__profile-image">
+          <div class="page-header__items">
+            <span class="page-header__item"><img class="header-item__icon"
+                src="./images/dashboard-icon.svg">داشبرد</span>
+            <span class="page-header__item"><img class="header-item__icon" src="./images/Chart-black.svg">گزارشات</span>
+            <span class="page-header__item active"><img class="header-item__icon" src="./images/Discount-blue.svg">تخفیف‌ها</span>
+            <span class="page-header__item"><img class="header-item__icon"
+                src="./images/message-question.svg">پشتیبانی</span>
+            <span class="page-header__item"><img class="header-item__icon" src="./images/code.svg">مستندات فنی</span>
+
+            <div class="person-wrapper">
+              <img class="person-wrapper__person-image" src="./images/masih.JPG" alt="">
+              <h6 class="person-wrapper__name">محمد مهدی احمدی</h6>
+              <div class="credit">
+                <span class="credit__credit-word">اعتبار:</span>
+                <span>
+                  <span class="credit__value">۲۴۳,۴۲۳,۸۴۹</span>
+                  <span class="credit__unit">ریال</span>
+                </span>
+              </div>
+              <button class="increase-credit-button"><img src="./images/credit-icon.svg"
+                  class="increase-credit-icon">افزایش اعتبار</button>
+            </div>
+            <button class="logout-button"><img class="logout-icon" src="./images/Logout.svg">خروج از پنل</button>
+          </div>
+        </header>
+      </div>
+      <h1 class="page-title">مشاهده تخفیف‌ها</h1>
+      <div class="page-body">
+        <div class="operator">
+          <div class="operator-header">
+            <img class="operator-header__icon" src="./images/hamrah-icon.svg">
+            <span class="operator-header__title">همراه اول</span>
+          </div>
+          <div class="operator-header__body">
+            <div>
+              <p class="body__title">تخفیف بسته اینترنت همراه اول</p>
+              <div class="body__discount-rate">۲.۰۰</div>
+            </div>
+            <div>
+              <p class="body__title">تخفیف شارژ همراه اول</p>
+              <div class="body__discount-rate">۲.۲۵</div>
+            </div>
+            <div>
+              <p class="body__title">تخفیف Pin همراه اول</p>
+              <div class="body__discount-rate">۵.۰۰</div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="operator">
+          <div class="operator-header">
+            <img class="operator-header__icon" src="./images/hamrah-icon.svg">
+            <span class="operator-header__title">همراه اول</span>
+          </div>
+          <div class="operator-header__body">
+            <div>
+              <p class="body__title">تخفیف بسته اینترنت ایرانسل</p>
+              <div class="body__discount-rate">۲.۰۰</div>
+            </div>
+            <div>
+              <p class="body__title">تخفیف شارژ ایرانسل</p>
+              <div class="body__discount-rate">۲.۲۵</div>
+            </div>
+            <div>
+              <p class="body__title">تخفیف Pin ایرانسل</p>
+              <div class="body__discount-rate">۵.۰۰</div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="operator">
+          <div class="operator-header">
+            <img class="operator-header__icon" src="./images/hamrah-icon.svg">
+            <span class="operator-header__title">رایتل</span>
+          </div>
+          <div class="operator-header__body">
+            <div>
+              <p class="body__title">تخفیف بسته اینترنت رایتل</p>
+              <div class="body__discount-rate">۲.۰۰</div>
+            </div>
+            <div>
+              <p class="body__title">تخفیف شارژ رایتل</p>
+              <div class="body__discount-rate">۲.۲۵</div>
+            </div>
+            <div>
+              <p class="body__title">تخفیف Pin رایتل</p>
+              <div class="body__discount-rate">۵.۰۰</div>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+
+    const handleShowMenu = () => {
+      const body = document.querySelector('body');
+      const menu = document.querySelector('.page-header__items');
+      const logo = document.querySelector('.page-header__logo');
+      const header = document.querySelector('.page-header');
+      const content = document.querySelector('.page-body');
+      const headerTitle = document.querySelector('.page-header__page-title');
+      console.log(headerTitle)
+      if (menu.style.opacity === '1') {
+        body.style.backgroundColor = '#F8F8FA'
+        menu.style.opacity = '0'
+        menu.style.zIndex = '-1';
+        logo.style.display = 'none';
+        headerTitle.innerHTML = 'تخفیف‌ها';
+        headerTitle.style.position = 'static';
+        headerTitle.style.top = '0';
+        headerTitle.style.padding = '0 0';
+        content.style.display = 'block';
+        menu.style.display = 'none'
+      } else {
+        body.style.backgroundColor = '#FFFFFFFF';
+        menu.style.opacity = '1';
+        menu.style.zIndex = '100';
+        logo.style.display = 'block';
+        headerTitle.innerHTML = 'پنل مدیریت';
+        headerTitle.style.position = 'absolute';
+        headerTitle.style.top = '73px';
+        headerTitle.style.left = '40%';
+        headerTitle.style.padding = '12px 0';
+        content.style.display = 'none';
+        menu.style.display = 'block'
+
+      }
+    }
+    const menuBtn = document.querySelector('.menu-btn');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      if (!menuOpen) {
+        menuBtn.classList.add('open');
+        menuOpen = true;
+      } else {
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+      }
+    });
+  </script>
+</body>
+
+</html>

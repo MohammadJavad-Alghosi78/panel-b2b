@@ -1,0 +1,1074 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- chartjs cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <title>گزارشات</title>
+</head>
+
+<body>
+  <div class="full-page">
+    <div class="sidebar">
+      <div class="sidebar__logo">
+        <img src="./images/setareaval.svg">
+      </div>
+      <ul class="sidebar__items">
+        <li class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/dashboard-icon.svg">
+          <span class="item-text">داشبُرد</span>
+        </li>
+        <li class="sidebar-items__item active">
+          <img class="sidebar-icons active" src="./images/report.svg">
+          <span class="item-text active-item-text">گزارشات</span>
+        </li>
+        <li class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/Discount.svg">
+          <span class="item-text">تخفیف‌ها</span>
+        </li>
+        <li class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/message-question.svg">
+          <span class="item-text">پشتیبانی</span>
+        </li>
+        <li class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/code.svg">
+          <span class="item-text">مستندات فنی</span>
+        </li>
+      </ul>
+
+      <div class="personal-details">
+        <img class="person-image" src="./images/masih.JPG" width="40" height="40">
+        <h5 class="personal-details__name">محمدمهدی احمدی</h5>
+        <div class="personal-details__credit">
+          <span>اعتبار:</span>
+          <span>۲۴۳,۴۲۳,۸۴۹ ریال</span>
+        </div>
+
+      </div>
+      <button class="sidebar__logout-icon">
+        <img src="./images/Logout.svg">
+        <span class="logout-text">خروج از پنل</span>
+      </button>
+    </div>
+    <div class="page-container">
+      <header class="responsive-header">
+        <div class="responsive-header__responsive-menu">
+          <img class="responsive-menu__icon" src="./images/menu.svg" onclick="handleShowMenu()">
+          <span>گزارشات</span>
+          <img src="./images/masih.JPG" class="responsive-menu__person-image">
+          <div class="menu-links">
+            <div class="menu-links__header">
+              <img class="responsive-menu__close-icon" src="./images/close-menu.svg" onclick="handleHideMenu()">
+              <div class="header__logo-wrapper">
+                <img class="setare-logo" src="./images/setareaval.svg">
+                <span>پنل مدیریت</span>
+              </div>
+              <img src="./images/masih.JPG" class="responsive-menu__person-image">
+            </div>
+            <ul class="menu-links__body">
+              <li class="body__item">
+                <img src="./images/dashboard-icon.svg">
+                <span class="responsive-menu-item__title">داشبرد</span>
+              </li>
+              <li class="body__item active-item">
+                <img src="./images/report.svg">
+                <span class="responsive-menu-item__title active-title">گزارشات</span>
+              </li>
+              <li class="body__item">
+                <img src="./images/Discount.svg">
+                <span class="responsive-menu-item__title">تخفیف‌ها</span>
+              </li>
+              <li class="body__item">
+                <img src="./images/message-question.svg">
+                <span class="responsive-menu-item__title">پشتیبانی</span>
+              </li>
+              <li class="body__item">
+                <img src="./images/code.svg">
+                <span class="responsive-menu-item__title">مستندات فنی</span>
+              </li>
+            </ul>
+            <div class="menu-links__footer">
+              <img src="./images/masih.JPG" class="credit__person-image">
+              <div class="credit__person-name">محمدمهدی احمدی</div>
+              <div class="credit-section">
+                <span>اعتبار</span>
+                <span>۲۴۳,۴۲۳,۸۴۹ ریال</span>
+              </div>
+            </div>
+            <div class="logout-button-wrapper">
+              <button class="logout-button-wrapper__button">
+                <img src="./images/Logout.svg" class="logout-button__logout-icon">
+                <span>خروج از پنل</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <header class="page-header">
+        <div class="page-header__breadcrumb">
+          <span class="home">خانه</span>
+          <img src="./images/Arrow - Left.svg" class="left-icon">
+          <span>گزارشات</span>
+        </div>
+        <div class="page-header__timezone">
+          <div class="timezone__item">
+            <img class="timezone__icon" src="./images/Time Square.svg">
+            <span>۱۰:۵۵:۰۰</span>
+          </div>
+          <div class="timezone__item">
+            <img class="timezone__icon" src="./images/Calendar.svg">
+            <span>۱۴۰۰/۰۵/۲۲</span>
+          </div>
+        </div>
+        <div class="page-header__notification">
+          <img src="./images/Notification.svg" class="notification__icon">
+          <img src="./images/masih.JPG" class="notification__icon-person">
+        </div>
+      </header>
+      <div class="responsive-tab">
+        <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="wallet-history">تاریخچه شارژ کیف
+          پول</span>
+        <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="send-money-report">گزارش
+          واریز</span>
+        <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="sale-report">گزارش تجمعی
+          فروش</span>
+        <span onclick="handleChangeTab(this)" class="responsive-tab__tab active-responsive-tab"
+          data-target="direct-charge-report">گزارش شارژ
+          مستقیم</span>
+      </div>
+      <div class="tabs">
+        <div onclick="handleChangeTab(this)" data-target="wallet-history" class="tabs__tab">تاریخچه شارژ کیف
+          پول</div>
+        <div onclick="handleChangeTab(this)" data-target="send-money-report" class="tabs__tab">گزارش واریزی</div>
+        <div onclick="handleChangeTab(this)" data-target="sale-report" class="tabs__tab">گزارش تجمعی</div>
+        <div onclick="handleChangeTab(this)" data-target="direct-charge-report" class="tabs__tab active-tab">گزارش شارژ
+          مستقیم
+        </div>
+      </div>
+
+
+
+      <!-- CONTENT OF TABS -->
+      <div class="container-content">
+        <div id="wallet-history" class="tab-content">
+          <div class="filter-section">
+            <div class="filter-section__main-row">
+              <div class="filter-section__search-inputs">
+                <div class="page-search-column">
+                  <img src="./images/Search.svg" class="filter-section__search-icon">
+                  <input type="text" placeholder="جستجو" class="search-inputs__search-input">
+                </div>
+                <div class="page-action-buttons-column">
+                  <select class="form-control search-inputs__timestep">
+                    <option>هفتگی</option>
+                    <option>ماهانه</option>
+                    <option>سالانه</option>
+                  </select>
+                </div>
+              </div>
+              <div class="filter-section__action-button-wrapper">
+                <button class="action-button-wrapper__excel-button">
+                  <img src="./images/Download.svg">
+                  خروجی اکسل
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive history-wallet-table">
+            <table class="table">
+              <thead class="responsive-table-header">
+                <tr class="responsive-table-row responsive-table-row-header">
+                  <th scope="col" class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck"></label>
+                    </div>
+                  </th>
+                  <th scope="col" class="responsive-table__table-cell">ردیف</th>
+                  <th scope="col" class="responsive-table__table-cell">مبلغ (ریال)</th>
+                  <th scope="col" class="responsive-table__table-cell">موجودی (ریال)</th>
+                  <th scope="col" class="responsive-table__table-cell">بابت</th>
+                  <th scope="col" class="responsive-table__table-cell">تاریخ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="responsive-table-row responsive-table-row-item">
+                  <td class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck1"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck1"></label>
+                    </div>
+                  </td>
+                  <td class="responsive-table__table-cell">۲</td>
+                  <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
+                  <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
+                  <td class="responsive-table__table-cell">افزایش شارژ کیف پول</td>
+                  <td class="responsive-table__table-cell wallet-charge-time-container">
+                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
+                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
+                  </td>
+                </tr>
+                <tr class="responsive-table-row responsive-table-row-item">
+                  <td class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck2"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck2"></label>
+                    </div>
+                  </td>
+                  <td class="responsive-table__table-cell">۱</td>
+                  <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
+                  <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
+                  <td class="responsive-table__table-cell">افزایش شارژ کیف پول</td>
+                  <td class="responsive-table__table-cell wallet-charge-time-container">
+                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
+                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="send-money-report" class="tab-content">
+          <div class="filter-section">
+            <div class="filter-section__main-row">
+              <div class="filter-section__search-inputs">
+                <div class="page-search-column">
+                  <img src="./images/Search.svg" class="filter-section__search-icon">
+                  <input type="text" placeholder="جستجو" class="search-inputs__search-input">
+                </div>
+                <div class="page-action-buttons-column">
+                  <select class="form-control search-inputs__timestep">
+                    <option>هفتگی</option>
+                    <option>ماهانه</option>
+                    <option>سالانه</option>
+                  </select>
+                </div>
+              </div>
+              <div class="filter-section__action-button-wrapper">
+                <button class="action-button-wrapper__excel-button">
+                  <img src="./images/Download.svg">
+                  خروجی اکسل
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive history-wallet-table">
+            <table class="table">
+              <thead class="responsive-table-header">
+                <tr class="responsive-table-row responsive-table-row-header">
+                  <th scope="col" class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck7"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck7"></label>
+                    </div>
+                  </th>
+                  <th scope="col" class="responsive-table__table-cell">ردیف</th>
+                  <th scope="col" class="responsive-table__table-cell">مبلغ (ریال)</th>
+                  <th scope="col" class="responsive-table__table-cell">موجودی (ریال)</th>
+                  <th scope="col" class="responsive-table__table-cell">بابت</th>
+                  <th scope="col" class="responsive-table__table-cell">تاریخ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="responsive-table-row responsive-table-row-item">
+                  <td class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck4"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck4"></label>
+                    </div>
+                  </td>
+                  <td class="responsive-table__table-cell">۲</td>
+                  <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
+                  <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
+                  <td class="responsive-table__table-cell">افزایش شارژ کیف پول</td>
+                  <td class="responsive-table__table-cell wallet-charge-time-container">
+                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
+                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
+                  </td>
+                </tr>
+                <tr class="responsive-table-row responsive-table-row-item">
+                  <td class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck5"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck5"></label>
+                    </div>
+                  </td>
+                  <td class="responsive-table__table-cell">۱</td>
+                  <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
+                  <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
+                  <td class="responsive-table__table-cell">افزایش شارژ کیف پول</td>
+                  <td class="responsive-table__table-cell wallet-charge-time-container">
+                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
+                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="sale-report" class="tab-content">
+          <div class="benefit-filter-section">
+            <div class="select-time-wrapper">
+              <span class="select-time-wrapper__item"><img class="select-time-wrapper__icon"
+                  src="./images/Calendar.svg"><span class="select-time-wrapper__text">بازه زمانی:</span></span>
+              <span class="select-time-wrapper__item">۱۴۰۰/۰۵/۲۰ - ۱۴۰۰/۰۴/۲۰</span>
+            </div>
+            <div class="benefit-wrapper">
+              <span class="benefit-wrapper__item"><img class="benefit-wrapper__icon"
+                  src="./images/credit-icon.svg">سود:</span>
+              <span class="benefit-wrapper__item">۲۵۴,۵۴۶,۵۴۹ ریال</span>
+            </div>
+          </div>
+          <div class="row third-item-row">
+            <div class="col-12 col-sm-12 col-lg-4 order-lg-1">
+              <div class="operators-wrapper">
+                <div class="operator-wrapper__operator">
+                  <div class="operator__header">
+                    <img class="operator__icon" src="./images/hamrah-icon.svg">
+                    <span class="operator__name">همراه اول</span>
+                  </div>
+                  <div class="operator__body">
+                    <div class="operator-body__item">
+                      <span>تعداد:</span>
+                      <span>۴۶۸ عدد</span>
+                    </div>
+                    <div class="operator-body__item">
+                      <span>حجم:</span>
+                      <span>۳۲۳,۸۳۹,۷۸۷ ریال</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="operator-wrapper__operator">
+                  <div class="operator__header">
+                    <img class="operator__icon" src="./images/hamrah-icon.svg">
+                    <span class="operator__name">همراه اول</span>
+                  </div>
+                  <div class="operator__body">
+                    <div class="operator-body__item">
+                      <span>تعداد:</span>
+                      <span>۴۶۸ عدد</span>
+                    </div>
+                    <div class="operator-body__item">
+                      <span>حجم:</span>
+                      <span>۳۲۳,۸۳۹,۷۸۷ ریال</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="operator-wrapper__operator">
+                  <div class="operator__header">
+                    <img class="operator__icon" src="./images/hamrah-icon.svg">
+                    <span class="operator__name">همراه اول</span>
+                  </div>
+                  <div class="operator__body">
+                    <div class="operator-body__item">
+                      <span>تعداد:</span>
+                      <span>۴۶۸ عدد</span>
+                    </div>
+                    <div class="operator-body__item">
+                      <span>حجم:</span>
+                      <span>۳۲۳,۸۳۹,۷۸۷ ریال</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 col-lg-4 order-lg-3">
+              <div class="sale-analyze">
+                <span class="sale-analyze__title">آمار فروش کلی به تفکیک فروش</span>
+                <canvas id="minimum-size__chart"></canvas>
+                <div class="sale-analyze__chart-legend">
+                  <span class="chart-legend__operator hamrahaval-before">همراه اول</span>
+                  <span class="chart-legend__operator irancell-before">ایرانسل</span>
+                  <span class="chart-legend__operator rightel-before">رایتل</span>
+                </div>
+                <div class="sale-analyze__item">
+                  <span>همراه اول</span>
+                  <span>۴,۳۷۵,۴۷۳,۳۴۳ ریال</span>
+                </div>
+                <div class="sale-analyze__item">
+                  <span>ایرانسل</span>
+                  <span>۴,۳۷۵,۴۷۳,۳۴۳ ریال</span>
+                </div>
+                <div class="sale-analyze__item">
+                  <span>رایتل</span>
+                  <span>۴,۳۷۵,۴۷۳,۳۴۳ ریال</span>
+                </div>
+                <div class="sale-analyze__item">
+                  <span>مجموع</span>
+                  <span>۴,۳۷۵,۴۷۳,۳۴۳ ریال</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 col-lg-4 order-lg-2">
+              <div class="services-wrapper">
+                <div class="service-wrapper__operator">
+                  <div class="service__header">
+                    <img class="service__icon" src="./images/hamrah-icon.svg">
+                    <span class="service__name">مجموع شارژ</span>
+                  </div>
+                  <div class="service__body">
+                    <div class="service-body__item">
+                      <span>تعداد:</span>
+                      <span>۴۶۸ عدد</span>
+                    </div>
+                    <div class="service-body__item">
+                      <span>حجم:</span>
+                      <span>۳۲۳,۸۳۹,۷۸۷ ریال</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-wrapper__operator">
+                  <div class="service__header">
+                    <img class="service__icon" src="./images/hamrah-icon.svg">
+                    <span class="service__name">مجموع اینترنت</span>
+                  </div>
+                  <div class="service__body">
+                    <div class="service-body__item">
+                      <span>تعداد:</span>
+                      <span>۴۶۸ عدد</span>
+                    </div>
+                    <div class="service-body__item">
+                      <span>حجم:</span>
+                      <span>۳۲۳,۸۳۹,۷۸۷ ریال</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-wrapper__operator">
+                  <div class="service__header">
+                    <img class="service__icon" src="./images/hamrah-icon.svg">
+                    <span class="service__name">مجموع تاپ‌آپ</span>
+                  </div>
+                  <div class="service__body">
+                    <div class="service-body__item">
+                      <span>تعداد:</span>
+                      <span>۴۶۸ عدد</span>
+                    </div>
+                    <div class="service-body__item">
+                      <span>حجم:</span>
+                      <span>۳۲۳,۸۳۹,۷۸۷ ریال</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row-of-all-reports-tab">
+            <div class="row-of-all-reports-tab__operators">
+              <div class="operator-card hamrah">
+                <div class="operator-card__header">
+                  <span class="header__title">همراه اول</span>
+                  <select class="form-control" aria-label="Default select example">
+                    <option value="1">اینترنت</option>
+                    <option value="2">شارژ</option>
+                    <option value="3">تاپ‌آپ</option>
+                  </select>
+                </div>
+                <div class="card-body__item">
+                  <span>تعداد:</span>
+                  <span>۵۴۲۳ عدد</span>
+                </div>
+                <div class="card-body__item">
+                  <span>حجم:</span>
+                  <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                </div>
+              </div>
+              <div class="operator-card irancell">
+                <div class="operator-card__header">
+                  <span class="header__title">ایرانسل</span>
+                  <select class="form-control" aria-label="Default select example">
+                    <option value="1">اینترنت</option>
+                    <option value="2">شارژ</option>
+                    <option value="3">تاپ‌آپ</option>
+                  </select>
+                </div>
+                <div class="card-body__item">
+                  <span>تعداد:</span>
+                  <span>۵۴۲۳ عدد</span>
+                </div>
+                <div class="card-body__item">
+                  <span>حجم:</span>
+                  <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                </div>
+              </div>
+              <div class="operator-card rightel">
+                <div class="operator-card__header">
+                  <span class="header__title">رایتل</span>
+                  <select class="form-control" aria-label="Default select example">
+                    <option value="1">اینترنت</option>
+                    <option value="2">شارژ</option>
+                    <option value="3">تاپ‌آپ</option>
+                  </select>
+                </div>
+                <div class="card-body__item">
+                  <span>تعداد:</span>
+                  <span>۵۴۲۳ عدد</span>
+                </div>
+                <div class="card-body__item">
+                  <span>حجم:</span>
+                  <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                </div>
+              </div>
+            </div>
+            <div class="row-of-all-reports-tab__services">
+              <div class="operator-card">
+                <div class="operator-card__service-header">
+                  <span class="header__service-title">شارژ</span>
+                </div>
+                <div class="card-body__item">
+                  <span>تعداد:</span>
+                  <span>۵۴۲۳ عدد</span>
+                </div>
+                <div class="card-body__item">
+                  <span>حجم:</span>
+                  <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                </div>
+              </div>
+              <div class="operator-card">
+                <div class="operator-card__service-header">
+                  <span class="header__title">اینترنت</span>
+
+                </div>
+                <div class="card-body__item">
+                  <span>تعداد:</span>
+                  <span>۵۴۲۳ عدد</span>
+                </div>
+                <div class="card-body__item">
+                  <span>حجم:</span>
+                  <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                </div>
+              </div>
+              <div class="operator-card">
+                <div class="operator-card__service-header">
+                  <span class="header__title">تاپ‌آپ</span>
+
+                </div>
+                <div class="card-body__item">
+                  <span>تعداد:</span>
+                  <span>۵۴۲۳ عدد</span>
+                </div>
+                <div class="card-body__item">
+                  <span>حجم:</span>
+                  <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                </div>
+              </div>
+            </div>
+            <div class="row-of-all-reports-tab__operators-full-report">
+              <span class="sale-analyze__title">آمار فروش کلی به تفکیک فروش</span>
+              <canvas id="medium-size__chart"></canvas>
+              <div class="sale-analyze__chart-legend">
+                <span class="chart-legend__operator hamrahaval-before">همراه اول</span>
+                <span class="chart-legend__operator irancell-before">ایرانسل</span>
+                <span class="chart-legend__operator rightel-before">رایتل</span>
+              </div>
+              <div class="operator-report">
+                <span>همراه اول</span>
+                <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+              </div>
+              <div class="operator-report">
+                <span>همراه اول</span>
+                <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+              </div>
+              <div class="operator-report">
+                <span>همراه اول</span>
+                <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+              </div>
+              <div class="operator-report">
+                <span>همراه اول</span>
+                <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+              </div>
+            </div>
+          </div>
+          <div class="row-of-all-reports-tab-maxsize">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="col-lg-12">
+                  <div class="row-of-all-reports-tab__operators">
+                    <div class="operator-card hamrah">
+                      <div class="operator-card__header">
+                        <span class="header__title">همراه اول</span>
+                        <select class="form-control" aria-label="Default select example">
+                          <option value="1">اینترنت</option>
+                          <option value="2">شارژ</option>
+                          <option value="3">تاپ‌آپ</option>
+                        </select>
+                      </div>
+                      <div class="card-body__item">
+                        <span>تعداد:</span>
+                        <span>۵۴۲۳ عدد</span>
+                      </div>
+                      <div class="card-body__item">
+                        <span>حجم:</span>
+                        <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                      </div>
+                    </div>
+                    <div class="operator-card irancell">
+                      <div class="operator-card__header">
+                        <span class="header__title">ایرانسل</span>
+                        <select class="form-control" aria-label="Default select example">
+                          <option value="1">اینترنت</option>
+                          <option value="2">شارژ</option>
+                          <option value="3">تاپ‌آپ</option>
+                        </select>
+                      </div>
+                      <div class="card-body__item">
+                        <span>تعداد:</span>
+                        <span>۵۴۲۳ عدد</span>
+                      </div>
+                      <div class="card-body__item">
+                        <span>حجم:</span>
+                        <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                      </div>
+                    </div>
+                    <div class="operator-card rightel">
+                      <div class="operator-card__header">
+                        <span class="header__title">رایتل</span>
+                        <select class="form-control" aria-label="Default select example">
+                          <option value="1" selected>اینترنت</option>
+                          <option value="2">شارژ</option>
+                          <option value="3">تاپ‌آپ</option>
+                        </select>
+                      </div>
+                      <div class="card-body__item">
+                        <span>تعداد:</span>
+                        <span>۵۴۲۳ عدد</span>
+                      </div>
+                      <div class="card-body__item">
+                        <span>حجم:</span>
+                        <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="row">
+                    <div class="col-lg-6 mt-2">
+                      <div class="service-details">
+                        <div class="service-content">
+                          <p class="service-content__header">مجموع شارژ</p>
+                          <div class="service-details__item">
+                            <span class="service-details__item-text">تعداد:</span>
+                            <span class="service-details__item-text">۵۴۲۳ عدد</span>
+                          </div>
+                          <div class="service-details__item">
+                            <span class="service-details__item-text">تعداد:</span>
+                            <span class="service-details__item-text">۵۴۲۳ عدد</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 mt-2">
+                      <div class="service-details">
+                        <div class="service-content">
+                          <p class="service-content__header">مجموع اینترنت</p>
+                          <div class="service-details__item">
+                            <span class="service-details__item-text">تعداد:</span>
+                            <span class="service-details__item-text">۵۴۲۳ عدد</span>
+                          </div>
+                          <div class="service-details__item">
+                            <span class="service-details__item-text">تعداد:</span>
+                            <span class="service-details__item-text">۵۴۲۳ عدد</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 mt-2">
+                      <div class="service-details">
+                        <div class="service-content">
+                          <p class="service-content__header">مجموع تاپ‌آپ</p>
+                          <div class="service-details__item">
+                            <span class="service-details__item-text">تعداد:</span>
+                            <span class="service-details__item-text">۵۴۲۳ عدد</span>
+                          </div>
+                          <div class="service-details__item">
+                            <span class="service-details__item-text">تعداد:</span>
+                            <span class="service-details__item-text">۵۴۲۳ عدد</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 mt-2">
+                      <div class="service-details-benefit">
+                        <div class="service-content-benefit">
+                          <p class="service-content-benefit__header">سود</p>
+                          <div class="service-details__item">
+                            <span class="service-details__item-text">حجم:</span>
+                            <span class="service-details__item-text">۵۴۲۳ عدد</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div
+                  class="row-of-all-reports-tab__operators-full-report row-of-all-reports-tab__operators-full-report-maxsize">
+                  <span class="sale-analyze__title">آمار فروش کلی به تفکیک فروش</span>
+                  <canvas id="maximum-size__chart" style="width:100%;max-width:600px"></canvas>
+                  <div class="sale-analyze__chart-legend">
+                    <span class="chart-legend__operator hamrahaval-before">همراه اول</span>
+                    <span class="chart-legend__operator irancell-before">ایرانسل</span>
+                    <span class="chart-legend__operator rightel-before">رایتل</span>
+                  </div>
+                  <div class="operator-report">
+                    <span>همراه اول</span>
+                    <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                  </div>
+                  <div class="operator-report">
+                    <span>همراه اول</span>
+                    <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                  </div>
+                  <div class="operator-report">
+                    <span>همراه اول</span>
+                    <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                  </div>
+                  <div class="operator-report">
+                    <span>همراه اول</span>
+                    <span>۲۵۴,۵۴۶,۵۴۹ ریال</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="direct-charge-report" class="tab-content show-tab">
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">جستجوی پیشرفته</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="modal-body_content">
+                    <div class="advanced-search-column right">
+                      <input type="text" class="avanced-search-modal__input" placeholder="شماره تلفن">
+                      <select class="form-control avanced-search-modal__input advanced-search-dropdown">
+                        <option value="" selected disabled><span class="topUp-type">نوع تاپ‌آپ</span></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                      </select>
+                      <input type="text" class="avanced-search-modal__input" placeholder="از مبلغ">
+                      <input type="text" class="avanced-search-modal__input" placeholder="از تاریخ">
+                      <input type="text" class="avanced-search-modal__input" placeholder="شماره مرجع اپراتور">
+                    </div>
+                    <div class="advanced-search-column">
+                      <input type="text" class="avanced-search-modal__input" placeholder="شماره رزرو">
+                      <select class="form-control avanced-search-modal__input advanced-search-dropdown">
+                        <option value="" selected disabled><span class="topUp-type">اپراتور</span></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                      </select>
+                      <input type="text" class="avanced-search-modal__input" placeholder="تا مبلغ">
+                      <input type="text" class="avanced-search-modal__input" placeholder="تا تاریخ">
+                      <select class="form-control avanced-search-modal__input advanced-search-dropdown">
+                        <option value="" selected disabled><span class="topUp-type">وضعیت</span></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="modal-footer-content">
+                  <button class="footer-button close-button" data-dismiss="modal">بستن</button>
+                  <button type="submit" class="footer-button submit-form">جستجوی پیشرفته</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="advanced-search-no-mobile-wrapper">
+            <div class="row">
+              <div class="col-sm-3 mt-2">
+                <input type="text" class="advanced-search-input" placeholder="شماره تلفن">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <input type="text" class="advanced-search-input" placeholder="شماره رزرو">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <select class="form-control advanced-search-dropdown-input">
+                  <option value="" selected disabled><span class="topUp-type">نوع تاپ‌آپ</span></option>
+                  <option></option>
+                  <option></option>
+                  <option></option>
+                </select>
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <input type="text" class="advanced-search-input" placeholder="از مبلغ">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <input type="text" class="advanced-search-input" placeholder="از تاریخ">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <input type="text" class="advanced-search-input" placeholder="تا تاریخ">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <input type="text" class="advanced-search-input" placeholder="شماره مرجع اپراتور">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <select class="form-control advanced-search-dropdown-input">
+                  <option value="" selected disabled><span class="topUp-type">اپراتور</span></option>
+                  <option></option>
+                  <option></option>
+                  <option></option>
+                </select>
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <input type="text" class="advanced-search-input" placeholder="تا مبلغ">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <select class="form-control  advanced-search-dropdown-input">
+                  <option value="" selected disabled><span class="topUp-type">وضعیت</span></option>
+                  <option></option>
+                  <option></option>
+                  <option></option>
+                </select>
+
+              </div>
+              <div class="col-sm-3 mt-2">
+
+              </div>
+              <div class="col-sm-3 mt-2">
+                <button class="sumbit-advanced-search">جستجوی پیشرفته</button>
+              </div>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="advanced-search-button" data-toggle="modal" data-target="#exampleModal">
+              جستجوی پیشرفته
+            </button>
+            <button class="advanced-search-button-no-mobile" onclick="handleShowAdvancedSearch()">
+              جستجوی پیشرفته
+            </button>
+            <button class="action-button-wrapper__excel-button">
+              <img src="./images/Download.svg">
+              خروجی اکسل
+            </button>
+          </div>
+          <div class="table-responsive direct-charge-table">
+            <table class="table">
+              <thead class="responsive-table-header">
+                <tr class="responsive-table-row responsive-table-row-header">
+                  <th scope="col" class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck"></label>
+                    </div>
+                  </th>
+                  <th scope="col" class="responsive-table__table-cell">شناسه تراکنش</th>
+                  <th scope="col" class="responsive-table__table-cell">مبلغ خرید (ریال)</th>
+                  <th scope="col" class="responsive-table__table-cell">شماره شارژ</th>
+                  <th scope="col" class="responsive-table__table-cell">مبلغ کسر شده (ریال)</th>
+                  <th scope="col" class="responsive-table__table-cell">نوع تاپ‌آپ</th>
+                  <th scope="col" class="responsive-table__table-cell">اپراتور</th>
+                  <th scope="col" class="responsive-table__table-cell">مبلغ سود</th>
+                  <th scope="col" class="responsive-table__table-cell">وضعیت</th>
+                  <th scope="col" class="responsive-table__table-cell">تاریخ</th>
+                  <th scope="col" class="responsive-table__table-cell">ترکانش اپراتور</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="responsive-table-row responsive-table-row-item">
+                  <td class="responsive-table__table-cell">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck100"
+                        onclick="handleSelectAllChecboxItems()">
+                      <label class="custom-control-label" for="customCheck100"></label>
+                  <td class="responsive-table__table-cell">۱۰۳۱۸۲۱۱۳</td>
+                  <td class="responsive-table__table-cell">۵۴۵,۰۰۰</td>
+                  <td class="responsive-table__table-cell">۰۹۱۹۷۸۷۸۸۷۸</td>
+                  <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
+                  <td class="responsive-table__table-cell">اینترنت</td>
+                  <td class="responsive-table__table-cell">همراه اول</td>
+                  <td class="responsive-table__table-cell">۱۰,۹۰۰ -</td>
+                  <td class="responsive-table__table-cell">موفق</td>
+                  <td class="responsive-table__table-cell direct-charge-table__date">
+                    <span>۱۴۰۰/۰۵/۱۴</span>
+                    <span>۱۲:۱۰:۰۰</span>
+                  </td>
+                  <td class="responsive-table__table-cell">۲۸۷۷۸۸۹۹۷۷</td>
+          </div>
+
+          </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    // VARIABLES
+    var resonsiveMenuIcon = document.querySelector('.responsive-menu__icon');
+    var resonsiveMenu = document.querySelector('.menu-links');
+    var responsiveTabs = document.querySelectorAll('.responsive-tab__tab');
+    var allContentsOfPage = document.querySelectorAll('.tab-content');
+    var allItemsOfTableInput = document.querySelectorAll('.custom-control-input');
+    var allTabs = document.querySelectorAll('.tabs__tab');
+    var advancedSearchWrapper = document.querySelector('.advanced-search-no-mobile-wrapper');
+    var advancedSearchButton = document.querySelector('.advanced-search-button-no-mobile');
+    var page = document.querySelector('.container-content');
+
+    // HUMBERGERMENU => SHOW
+    function handleShowMenu() {
+      resonsiveMenu.style.display = 'block';
+      page.style.display = 'none';
+    }
+    // HUMBERGERMENU =? HIDE
+    function handleHideMenu() {
+      resonsiveMenu.style.display = 'none';
+      page.style.display = 'block'
+    }
+    //  CHANGE TAB AND CONTENT OF PAGE
+    function handleChangeTab(element) {
+      var rightElement = element.getAttribute('data-target');
+      for (var index = 0; index < responsiveTabs.length; index++) {
+        allContentsOfPage[index].style.display = 'none';
+        allTabs[index].classList.remove('active-tab');
+        responsiveTabs[index].classList.remove('active-responsive-tab');
+        if (responsiveTabs[index].getAttribute('data-target') === rightElement) {
+          document.getElementById(rightElement).style.display = 'block';
+          allTabs[index].classList.add('active-tab');
+          responsiveTabs[index].classList.add('active-responsive-tab');
+        }
+      }
+    }
+    // CHOOSE CHECKBOX OF ALL ITEMS IN TABLE
+    function handleSelectAllChecboxItems() {
+      for (var index = 1; index < allItemsOfTableInput.length; index++) {
+        allItemsOfTableInput[0].checked ? allItemsOfTableInput[index].checked = true :
+          allItemsOfTableInput[index].checked = false;
+      }
+    }
+    // SHOW ADVANCED SEARCH ITEMS IN NO MOBILE MODE
+    function handleShowAdvancedSearch() {
+      advancedSearchButton.style.display = 'none';
+      advancedSearchWrapper.style.display = 'block';
+    }
+    // CHART
+    var xValues = ["همراه اول", "ایرانسل", "رایتل", "USA", "Argentina"];
+    var yValues = [55, 45, 35];
+    var barColors = [
+      "#9ADCE3",
+      "#FFBE00",
+      "#9B2776"
+    ];
+
+
+    new Chart("minimum-size__chart", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          borderRadius: 20,
+          data: yValues,
+          hoverBackgroundColor: "#FFBE00"
+        }]
+      },
+      options: {
+        legend: {
+          position: 'bottom',
+          display: false
+        },
+        cutoutPercentage: 80,
+        title: {
+          display: true,
+          text: ""
+        }
+      }
+    });
+
+    new Chart("medium-size__chart", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          borderRadius: 20,
+          data: yValues,
+          hoverBackgroundColor: "#FFBE00"
+        }]
+      },
+      options: {
+        legend: {
+          position: 'bottom',
+          display: false
+        },
+        cutoutPercentage: 80,
+        title: {
+          display: true,
+          text: ""
+        }
+      }
+    });
+
+    new Chart("maximum-size__chart", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          borderRadius: 20,
+          data: yValues,
+          hoverBackgroundColor: "#FFBE00"
+        }]
+      },
+      options: {
+        legend: {
+          position: 'bottom',
+          display: false
+        },
+        cutoutPercentage: 80,
+        title: {
+          display: true,
+          text: ""
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
