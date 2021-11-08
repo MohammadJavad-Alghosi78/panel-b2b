@@ -52,7 +52,6 @@
       </ul>
 
       <div class="personal-details">
-        <img class="person-image" src="./images/masih.JPG" width="40" height="40">
         <h5 class="personal-details__name">محمدمهدی احمدی</h5>
         <div class="personal-details__credit">
           <span>اعتبار:</span>
@@ -69,8 +68,7 @@
       <header class="responsive-header">
         <div class="responsive-header__responsive-menu">
           <img class="responsive-menu__icon" src="./images/menu.svg" onclick="handleShowMenu()">
-          <span>گزارشات</span>
-          <img src="./images/masih.JPG" class="responsive-menu__person-image">
+          <span class="page-title">گزارشات</span>
           <div class="menu-links">
             <div class="menu-links__header">
               <img class="responsive-menu__close-icon" src="./images/close-menu.svg" onclick="handleHideMenu()">
@@ -78,7 +76,6 @@
                 <img class="setare-logo" src="./images/setareaval.svg">
                 <span>پنل مدیریت</span>
               </div>
-              <img src="./images/masih.JPG" class="responsive-menu__person-image">
             </div>
             <ul class="menu-links__body">
               <li class="body__item">
@@ -103,7 +100,6 @@
               </li>
             </ul>
             <div class="menu-links__footer">
-              <img src="./images/masih.JPG" class="credit__person-image">
               <div class="credit__person-name">محمدمهدی احمدی</div>
               <div class="credit-section">
                 <span>اعتبار</span>
@@ -137,14 +133,14 @@
         </div>
         <div class="page-header__notification">
           <img src="./images/Notification.svg" class="notification__icon">
-          <img src="./images/masih.JPG" class="notification__icon-person">
         </div>
       </header>
       <div class="responsive-tab">
         <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="wallet-history">تاریخچه شارژ کیف
           پول</span>
-        <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="send-money-report">گزارش
-          واریز</span>
+          
+          <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="send-money-report">گزارش
+            واریز</span>
         <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="sale-report">گزارش تجمعی
           فروش</span>
         <span onclick="handleChangeTab(this)" class="responsive-tab__tab active-responsive-tab"
@@ -154,11 +150,14 @@
       <div class="tabs">
         <div onclick="handleChangeTab(this)" data-target="wallet-history" class="tabs__tab">تاریخچه شارژ کیف
           پول</div>
+          <span class="divider"></span>
         <div onclick="handleChangeTab(this)" data-target="send-money-report" class="tabs__tab">گزارش واریزی</div>
-        <div onclick="handleChangeTab(this)" data-target="sale-report" class="tabs__tab">گزارش تجمعی</div>
+        <span class="divider"></span>
+        <div onclick="handleChangeTab(this)" data-target="sale-report" class="tabs__tab">گزارش تجمعی</div><span class="divider"></span>
         <div onclick="handleChangeTab(this)" data-target="direct-charge-report" class="tabs__tab active-tab">گزارش شارژ
           مستقیم
         </div>
+        
       </div>
 
 
@@ -193,13 +192,6 @@
             <table class="table">
               <thead class="responsive-table-header">
                 <tr class="responsive-table-row responsive-table-row-header">
-                  <th scope="col" class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck"></label>
-                    </div>
-                  </th>
                   <th scope="col" class="responsive-table__table-cell">ردیف</th>
                   <th scope="col" class="responsive-table__table-cell">مبلغ (ریال)</th>
                   <th scope="col" class="responsive-table__table-cell">موجودی (ریال)</th>
@@ -209,13 +201,6 @@
               </thead>
               <tbody>
                 <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck1"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck1"></label>
-                    </div>
-                  </td>
                   <td class="responsive-table__table-cell">۲</td>
                   <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
                   <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
@@ -226,13 +211,6 @@
                   </td>
                 </tr>
                 <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck2"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck2"></label>
-                    </div>
-                  </td>
                   <td class="responsive-table__table-cell">۱</td>
                   <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
                   <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
@@ -275,13 +253,6 @@
             <table class="table">
               <thead class="responsive-table-header">
                 <tr class="responsive-table-row responsive-table-row-header">
-                  <th scope="col" class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck7"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck7"></label>
-                    </div>
-                  </th>
                   <th scope="col" class="responsive-table__table-cell">ردیف</th>
                   <th scope="col" class="responsive-table__table-cell">مبلغ (ریال)</th>
                   <th scope="col" class="responsive-table__table-cell">موجودی (ریال)</th>
@@ -291,13 +262,6 @@
               </thead>
               <tbody>
                 <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck4"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck4"></label>
-                    </div>
-                  </td>
                   <td class="responsive-table__table-cell">۲</td>
                   <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
                   <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
@@ -308,13 +272,6 @@
                   </td>
                 </tr>
                 <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck5"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck5"></label>
-                    </div>
-                  </td>
                   <td class="responsive-table__table-cell">۱</td>
                   <td class="responsive-table__table-cell wallet-charge-value">۵۴۵,۰۰۰</td>
                   <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
@@ -756,55 +713,80 @@
           </div>
         </div>
         <div id="direct-charge-report" class="tab-content show-tab">
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">جستجوی پیشرفته</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+              <div class="modal-content remove-border">
+                <div class="modal-header remove-border">
+                  <img src="./images/close-menu.svg" class="close-modal" data-dismiss="modal" width="16" height="16">
+                  <span class="modal-title">جستجوی پیشرفته</span>
                 </div>
-                <div class="modal-body">
-                  <div class="modal-body_content">
-                    <div class="advanced-search-column right">
-                      <input type="text" class="avanced-search-modal__input" placeholder="شماره تلفن">
-                      <select class="form-control avanced-search-modal__input advanced-search-dropdown">
-                        <option value="" selected disabled><span class="topUp-type">نوع تاپ‌آپ</span></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                      </select>
-                      <input type="text" class="avanced-search-modal__input" placeholder="از مبلغ">
-                      <input type="text" class="avanced-search-modal__input" placeholder="از تاریخ">
-                      <input type="text" class="avanced-search-modal__input" placeholder="شماره مرجع اپراتور">
-                    </div>
-                    <div class="advanced-search-column">
-                      <input type="text" class="avanced-search-modal__input" placeholder="شماره رزرو">
-                      <select class="form-control avanced-search-modal__input advanced-search-dropdown">
-                        <option value="" selected disabled><span class="topUp-type">اپراتور</span></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                      </select>
-                      <input type="text" class="avanced-search-modal__input" placeholder="تا مبلغ">
-                      <input type="text" class="avanced-search-modal__input" placeholder="تا تاریخ">
-                      <select class="form-control avanced-search-modal__input advanced-search-dropdown">
-                        <option value="" selected disabled><span class="topUp-type">وضعیت</span></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                      </select>
-                    </div>
+                <div class="modal-body remove-border">
+                  <div class="modal-body-row">
+                    <input type="text" placeholder="شماره تلفن" class="search-inputs right-input">
+                    <input type="text" placeholder="شماره رزرو"  class="search-inputs left-input">
                   </div>
+                  <div class="modal-body-row">
+                    <select
+                      name="top-up-type"
+                      id="top-up-type"
+                      class="search-inputs select-input right-input"
+                    >
+                      <option value="topup-type" hidden>نوع تاپ‌آپ</option>
+                      <option value="">شارژ</option>
+                      <option value="">اینترنت</option>
+                      <option value="">پین</option>
+                    </select>
+                    <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon">
+
+
+
+                    <select
+                      name="top-up-type"
+                      id="top-up-type"
+                      class="search-inputs select-input left-input"
+                    >
+                      <option value="operator" hidden>اپراتور</option>
+                      <option value="">همراه اول</option>
+                      <option value="">ایرانسل</option>
+                      <option value="">رایتل</option>
+                    </select>
+                    <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-icon">
+                  </div>
+                  <div class="modal-body-row">
+                    <input type="text" placeholder="از مبلغ" class="search-inputs right-input">
+                    <input type="text" placeholder="تا مبلغ"  class="search-inputs left-input">
+                  </div>
+                  <div class="modal-body-row">
+                    <input type="text" placeholder="از تاریخ" class="search-inputs right-input">
+                    <input type="text" placeholder="تا تاریخ"  class="search-inputs left-input">
+                  </div>
+                  <div class="modal-body-row">
+                    <input type="text" placeholder="شماره مرجع اپراتور" class="search-inputs right-input">
+                    <select
+                      name="top-up-type"
+                      id="top-up-type"
+                      class="search-inputs select-input right-input"
+                    >
+                      <option value="condition" hidden>وضعیت</option>
+                      <option value="">همراه اول</option>
+                      <option value="">ایرانسل</option>
+                      <option value="">رایتل</option>
+                    </select>
+                    <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon">
+                  </div>
+                  
+
+
+
+
+
+
+
                 </div>
               </div>
-              <div class="modal-footer">
-                <div class="modal-footer-content">
-                  <button class="footer-button close-button" data-dismiss="modal">بستن</button>
-                  <button type="submit" class="footer-button submit-form">جستجوی پیشرفته</button>
-                </div>
+              <div class="modal-footer remove-border">
+                <button class="search-btn">جستجو</button>
               </div>
             </div>
           </div>
@@ -819,12 +801,17 @@
 
               </div>
               <div class="col-sm-3 mt-2">
-                <select class="form-control advanced-search-dropdown-input">
-                  <option value="" selected disabled><span class="topUp-type">نوع تاپ‌آپ</span></option>
-                  <option></option>
-                  <option></option>
-                  <option></option>
-                </select>
+                <select
+                      name="top-up-type"
+                      id="top-up-type"
+                      class="search-inputs select-input-no-mobile right-input"
+                    >
+                      <option value="topup-type" hidden>نوع تاپ‌آپ</option>
+                      <option value="">شارژ</option>
+                      <option value="">اینترنت</option>
+                      <option value="">پین</option>
+                    </select>
+                    <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon-no-mobile">
 
               </div>
               <div class="col-sm-3 mt-2">
@@ -843,13 +830,18 @@
                 <input type="text" class="advanced-search-input" placeholder="شماره مرجع اپراتور">
 
               </div>
-              <div class="col-sm-3 mt-2">
-                <select class="form-control advanced-search-dropdown-input">
-                  <option value="" selected disabled><span class="topUp-type">اپراتور</span></option>
-                  <option></option>
-                  <option></option>
-                  <option></option>
-                </select>
+              <div class="col-sm-3 mt-2" style="position:relative">
+                <select
+                      name="operator"
+                      id="operator"
+                      class="search-inputs select-input-no-mobile right-input"
+                    >
+                      <option value="topup-type" hidden>اپراتور</option>
+                      <option value="">همراه اول</option>
+                      <option value="">ایرانسل</option>
+                      <option value="">رایتل</option>
+                    </select>
+                    <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon-no-mobile">
 
               </div>
               <div class="col-sm-3 mt-2">
@@ -857,19 +849,24 @@
 
               </div>
               <div class="col-sm-3 mt-2">
-                <select class="form-control  advanced-search-dropdown-input">
-                  <option value="" selected disabled><span class="topUp-type">وضعیت</span></option>
-                  <option></option>
-                  <option></option>
-                  <option></option>
-                </select>
+                <select
+                      name="condition"
+                      id="operator"
+                      class="search-inputs select-input-no-mobile right-input"
+                    >
+                      <option value="topup-type" hidden>وضعیت</option>
+                      <option value="">اول</option>
+                      <option value="">دوم</option>
+                      <option value="">سوم</option>
+                    </select>
+                    <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon-no-mobile">
 
               </div>
               <div class="col-sm-3 mt-2">
 
               </div>
               <div class="col-sm-3 mt-2">
-                <button class="sumbit-advanced-search">جستجوی پیشرفته</button>
+                <button class="sumbit-advanced-search-button">جستجوی پیشرفته</button>
               </div>
             </div>
           </div>
@@ -881,7 +878,7 @@
               جستجوی پیشرفته
             </button>
             <button class="action-button-wrapper__excel-button">
-              <img src="./images/Download.svg">
+              <img src="./images/Download.svg" class="excel-download">
               خروجی اکسل
             </button>
           </div>
@@ -889,49 +886,50 @@
             <table class="table">
               <thead class="responsive-table-header">
                 <tr class="responsive-table-row responsive-table-row-header">
-                  <th scope="col" class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck"></label>
-                    </div>
-                  </th>
-                  <th scope="col" class="responsive-table__table-cell">شناسه تراکنش</th>
-                  <th scope="col" class="responsive-table__table-cell">مبلغ خرید (ریال)</th>
-                  <th scope="col" class="responsive-table__table-cell">شماره شارژ</th>
-                  <th scope="col" class="responsive-table__table-cell">مبلغ کسر شده (ریال)</th>
-                  <th scope="col" class="responsive-table__table-cell">نوع تاپ‌آپ</th>
-                  <th scope="col" class="responsive-table__table-cell">اپراتور</th>
-                  <th scope="col" class="responsive-table__table-cell">مبلغ سود</th>
-                  <th scope="col" class="responsive-table__table-cell">وضعیت</th>
-                  <th scope="col" class="responsive-table__table-cell">تاریخ</th>
-                  <th scope="col" class="responsive-table__table-cell">ترکانش اپراتور</th>
+                  <th class="responsive-table__table-cell table-header-cell">شناسه تراکنش</th>
+                  <th class="responsive-table__table-cell table-header-cell">مبلغ خرید (ریال)</th>
+                  <th class="responsive-table__table-cell table-header-cell">شماره شارژ</th>
+                  <th class="responsive-table__table-cell table-header-cell">مبلغ کسر شده (ریال)</th>
+                  <th class="responsive-table__table-cell table-header-cell">نوع تاپ‌آپ</th>
+                  <th class="responsive-table__table-cell table-header-cell">اپراتور</th>
+                  <th class="responsive-table__table-cell table-header-cell">مبلغ سود</th>
+                  <th class="responsive-table__table-cell table-header-cell">وضعیت</th>
+                  <th class="responsive-table__table-cell table-header-cell">تاریخ</th>
+                  <th class="responsive-table__table-cell table-header-cell">تراکنش اپراتور</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck100"
-                        onclick="handleSelectAllChecboxItems()">
-                      <label class="custom-control-label" for="customCheck100"></label>
-                  <td class="responsive-table__table-cell">۱۰۳۱۸۲۱۱۳</td>
-                  <td class="responsive-table__table-cell">۵۴۵,۰۰۰</td>
-                  <td class="responsive-table__table-cell">۰۹۱۹۷۸۷۸۸۷۸</td>
-                  <td class="responsive-table__table-cell">۵۳۴,۱۰۰</td>
-                  <td class="responsive-table__table-cell">اینترنت</td>
-                  <td class="responsive-table__table-cell">همراه اول</td>
-                  <td class="responsive-table__table-cell">۱۰,۹۰۰ -</td>
-                  <td class="responsive-table__table-cell">موفق</td>
-                  <td class="responsive-table__table-cell direct-charge-table__date">
+                  <td class="responsive-table__table-cell table-row-item-cell">۱۰۳۱۸۲۱۱۳</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۵۴۵,۰۰۰</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۰۹۱۹۷۸۷۸۸۷۸</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۵۳۴,۱۰۰</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">اینترنت</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">همراه اول</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۱۰,۹۰۰ -</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">موفق</td>
+                  <td class="responsive-table__table-cell table-row-item-cell direct-charge-table__date">
                     <span>۱۴۰۰/۰۵/۱۴</span>
                     <span>۱۲:۱۰:۰۰</span>
                   </td>
                   <td class="responsive-table__table-cell">۲۸۷۷۸۸۹۹۷۷</td>
-          </div>
-
-          </tr>
-          </tbody>
+                </tr>
+                <tr class="responsive-table-row responsive-table-row-item">
+                  <td class="responsive-table__table-cell table-row-item-cell">۱۰۳۱۸۲۱۱۳</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۵۴۵,۰۰۰</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۰۹۱۹۷۸۷۸۸۷۸</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۵۳۴,۱۰۰</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">اینترنت</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">همراه اول</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">۱۰,۹۰۰ -</td>
+                  <td class="responsive-table__table-cell table-row-item-cell">موفق</td>
+                  <td class="responsive-table__table-cell table-row-item-cell direct-charge-table__date">
+                    <span>۱۴۰۰/۰۵/۱۴</span>
+                    <span>۱۲:۱۰:۰۰</span>
+                  </td>
+                  <td class="responsive-table__table-cell">۲۸۷۷۸۸۹۹۷۷</td>
+                </tr>
+              </tbody>
           </table>
         </div>
       </div>
@@ -976,12 +974,12 @@
       }
     }
     // CHOOSE CHECKBOX OF ALL ITEMS IN TABLE
-    function handleSelectAllChecboxItems() {
-      for (var index = 1; index < allItemsOfTableInput.length; index++) {
-        allItemsOfTableInput[0].checked ? allItemsOfTableInput[index].checked = true :
-          allItemsOfTableInput[index].checked = false;
-      }
-    }
+    // function handleSelectAllChecboxItems() {
+    //   for (var index = 1; index < allItemsOfTableInput.length; index++) {
+    //     allItemsOfTableInput[0].checked ? allItemsOfTableInput[index].checked = true :
+    //       allItemsOfTableInput[index].checked = false;
+    //   }
+    // }
     // SHOW ADVANCED SEARCH ITEMS IN NO MOBILE MODE
     function handleShowAdvancedSearch() {
       advancedSearchButton.style.display = 'none';

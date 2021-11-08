@@ -1,0 +1,306 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>تخفیف‌ها</title>
+</head>
+
+<body>
+  <div class="full-page">
+    <div class="sidebar">
+      <div class="sidebar__logo">
+        <img src="./images/setareaval.svg" class="setare-logo">
+        <span class="management-panel">پنل مدیریت</span>
+      </div>
+        <a class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/dashboard-icon.svg">
+          <span class="item-text">داشبُرد</span>
+        </a>
+        <a class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/Chart-black.svg">
+          <span class="item-text">گزارشات</span>
+        </a>
+        <a class="sidebar-items__item active">
+          <img class="sidebar-icons" src="./images/Discount-blue.svg">
+          <span class="item-text active-text">تخفیف‌ها</span>
+        </a>
+        <a class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/message-question.svg">
+          <span class="item-text">پشتیبانی</span>
+        </a>
+        <a class="sidebar-items__item">
+          <img class="sidebar-icons" src="./images/code.svg">
+          <span class="item-text">مستندات فنی</span>
+        </a>
+
+      <div class="personal-details">
+        <h5 class="personal-details__name">محمدمهدی احمدی</h5>
+        <div class="personal-details__credit">
+          <span class="credit-text">اعتبار:</span>
+          <span class="credit-text">۲۴۳,۴۲۳,۸۴۹ ریال</span>
+        </div>
+
+      </div>
+      <button class="sidebar__logout-icon">
+        <img src="./images/Logout.svg">
+        <span class="logout-text">خروج از پنل</span>
+      </button>
+    </div>
+    <div class="page-container">
+      <header class="responsive-header">
+        <div class="responsive-header__responsive-menu">
+          <img class="responsive-menu__icon" src="./images/menu.svg" onclick="handleShowMenu()">
+          <span class="page-title">تخفیف‌ها</span>
+          <div class="menu-links">
+            <div class="menu-links__header">
+              <img class="responsive-menu__close-icon" src="./images/close-icon.svg" onclick="handleHideMenu()">
+              <div class="header__logo-wrapper">
+                <img class="setare-logo" src="./images/setareaval.svg">
+                <span>پنل مدیریت</span>
+              </div>
+            </div>
+            <ul class="menu-links__body">
+              <li class="body__item">
+                <img src="./images/dashboard-icon.svg">
+                <span class="responsive-menu-item__title">داشبرد</span>
+              </li>
+              <li class="body__item">
+                <img src="./images/Chart-black.svg">
+                <span class="responsive-menu-item__title">گزارشات</span>
+              </li>
+              <li class="body__item active-item">
+                <img src="./images/Discount-blue.svg">
+                <span class="responsive-menu-item__title active-title">تخفیف‌ها</span>
+              </li>
+              <li class="body__item">
+                <img src="./images/message-question.svg">
+                <span class="responsive-menu-item__title">پشتیبانی</span>
+              </li>
+              <li class="body__item">
+                <img src="./images/code.svg">
+                <span class="responsive-menu-item__title">مستندات فنی</span>
+              </li>
+            </ul>
+            <div class="menu-links__footer">
+              <div class="credit__person-name">محمدمهدی احمدی</div>
+              <div class="credit-section">
+                <span>اعتبار</span>
+                <span>۲۴۳,۴۲۳,۸۴۹ ریال</span>
+              </div>
+            </div>
+            <div class="logout-button-wrapper">
+              <button class="logout-button-wrapper__button">
+                <img src="./images/Logout.svg" class="logout-button__logout-icon">
+                <span>خروج از پنل</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <header class="page-header">
+        <div class="page-header__breadcrumb">
+          <span class="home">خانه</span>
+          <img src="./images/Arrow - Left.svg" class="left-icon">
+          <span class="header-item">تخفیف‌ها</span>
+          <div class="page-header__timezone">
+            <div class="timezone__item">
+              <img class="timezone__icon" src="./images/Time Square.svg">
+              <span class="header-item">۱۰:۵۵:۰۰</span>
+            </div>
+            <div class="timezone__item-second">
+              <img class="timezone__icon" src="./images/Calendar.svg">
+              <span class="header-item">۱۴۰۰/۰۵/۲۲</span>
+            </div>
+          </div>
+        </div>
+        <div class="page-header__notification">
+          <img src="./images/Notification.svg" class="notification__icon">
+        </div>
+      </header>
+
+
+
+      <div class="container-content">
+        <div class="mobile-content">
+          <div class="operator-discounts-wrapper">
+            <div class="operator-title">
+              <img src="./images/hamrah-icon.svg" width="32" height="32" class="operator-title__operator-logo">
+              <span class="operator-name">همراه اول</span>
+            </div>
+            <div class="operator-discounts">
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت همراه اول</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service mid-service">
+                <span class="operator-dicount-service-title">تخفیف شارژ همراه اول</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف Pin همراه اول</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+            </div>
+          </div> 
+          <div class="operator-discounts-wrapper mid-operator">
+            <div class="operator-title">
+              <img src="./images/mtn-irancell.svg" width="32" height="32" class="operator-title__operator-logo">
+              <span class="operator-name">ایرانسل</span>
+            </div>
+            <div class="operator-discounts">
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service mid-service">
+                <span class="operator-dicount-service-title">تخفیف شارژ ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف Pin ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+            </div>
+          <div>
+          <div class="operator-discounts-wrapper mid-operator">
+            <div class="operator-title">
+              <img src="./images/rightel.svg" width="32" height="32" class="operator-title__operator-logo">
+              <span class="operator-name">رایتل</span>
+            </div>
+            <div class="operator-discounts">
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت رایتل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service mid-service">
+                <span class="operator-dicount-service-title">تخفیف شارژ رایتل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف Pin رایتل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+            </div>
+          </div>
+        </div>          
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="no-mobile">
+        <p class="see-discounts-text">مشاهده تخفیف‌ها</p>
+        <div class="full-wrapper">
+          <div class="no-mobile-operator">
+            <div class="operator-values">
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service mid-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="no-mobile-operator">
+            <div class="operator-values">
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service mid-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="no-mobile-operator">
+            <div class="operator-values">
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service mid-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+              <div class="operator-service">
+                <span class="operator-dicount-service-title">تخفیف بسته اینترنت ایرانسل</span>
+                <span class="discount-number">۲.۰۰</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <script>
+    // VARIABLES
+    var resonsiveMenuIcon = document.querySelector('.responsive-menu__icon');
+    var resonsiveMenu = document.querySelector('.menu-links');
+    var allContentsOfPage = document.querySelectorAll('.tab-content');
+    var allItemsOfTableInput = document.querySelectorAll('.custom-control-input');
+    var page = document.querySelector('.container-content');
+
+    // HUMBERGERMENU => SHOW
+    function handleShowMenu() {
+      resonsiveMenu.style.display = 'block';
+      page.style.display = 'none';
+    }
+    // HUMBERGERMENU =? HIDE
+    function handleHideMenu() {
+      resonsiveMenu.style.display = 'none';
+      page.style.display = 'block'
+    }
+    // CHOOSE CHECKBOX OF ALL ITEMS IN TABLE
+    function handleSelectAllChecboxItems() {
+      for (var index = 1; index < allItemsOfTableInput.length; index++) {
+        allItemsOfTableInput[0].checked ? allItemsOfTableInput[index].checked = true :
+          allItemsOfTableInput[index].checked = false;
+      }
+    }
+
+  </script>
+</body>
+
+</html>
