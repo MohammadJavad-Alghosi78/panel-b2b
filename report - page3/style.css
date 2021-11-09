@@ -19,7 +19,7 @@ html, body {
 	min-height: 100vh;
 	background-color: #FFFFFF;
 	width: 10%;
-	padding: 16px 24px;
+	padding: 16px;
 	box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.1);
 	z-index: 100;
 }
@@ -33,7 +33,7 @@ html, body {
 
 .sidebar__items {
 	margin-top: 31px;
-	margin-left: 31px;
+	/* margin-left: 31px; */
 	list-style-type: none;
 	display: flex;
 	flex-direction: column;
@@ -54,7 +54,7 @@ html, body {
 	width: 100%;
 	text-align: center;
 	margin-top: 14px;
-	margin-left: 8px;
+	/* margin-left: 8px; */
 	justify-content: center;
 }
 
@@ -67,6 +67,7 @@ html, body {
 	display: none;
 	font-size: 14px;
 	line-height: 24px;
+	color: #130F26;
 } 
 
 .sidebar-active-item {
@@ -136,7 +137,7 @@ html, body {
 }
 /* ---------------------------- CONTAINER ---------------------------- */
 .page-container {
-	width: 99%;
+	width: 100%;
 	padding: 0 12px;
 }
 
@@ -283,7 +284,7 @@ html, body {
 	align-items: center;
 	background-color: #FFFFFF;
 	width: 100%;
-	padding: 14px;
+	padding: 14px 24px;
 }
 
 .page-header__breadcrumb {
@@ -305,9 +306,14 @@ html, body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-right: 142px;
 }
 
-.timezone__item {
+.timezone__item-second {
+	margin-right: 40px;
+}
+
+.timezone__item, .timezone__item-second {
 	display: flex;
 	align-items: center;
 }
@@ -378,7 +384,7 @@ html, body {
 	display: none;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 12px;
+	margin-top: 0;
 }
 
 .divider {
@@ -394,6 +400,7 @@ html, body {
 	font-size: 18px;
 	line-height: 31px;
 	cursor: pointer;
+	background-color: #FCFCFC;
 }
 
 .active-tab {
@@ -417,6 +424,7 @@ html, body {
 	position: absolute;
 	right: 8px;
 	top: 8px;
+	margin-left: 12px;
 }
 
 .search-inputs__search-input {
@@ -426,6 +434,8 @@ html, body {
 	background-color: #FFFFFF;
 	border: 0;
 	border-radius: 5px;
+	height: 32px;
+	width: 155px;
 }
 .search-inputs__search-input::placeholder {
 	color:#C4C4C4;
@@ -441,13 +451,14 @@ html, body {
 	line-height: 20px;
 	display: block;
 	text-align: center;
+	margin-bottom: 16px;
 }
 
 .sale-analyze__chart-legend {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
-	margin: 16px 0;
+	/* margin: 16px 0 24px; */
 }
 
 .chart-legend__operator {
@@ -484,6 +495,7 @@ canvas {
 	margin-top: 8px;
 	display: flex;
 	justify-content: flex-end;
+	margin-bottom: 12px;
 }
 
 .action-button-wrapper__excel-button {
@@ -531,17 +543,19 @@ canvas {
 
 .responsive-table-row {
 	display: flex;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 
 .responsive-table-row-header {
 	background: #007BFF;
 	color: #FFFFFF;
+	height: 68px;
 }
 
 .responsive-table-row-item {
 	background-color: #FFFFFF;
 	margin-top: 8px;
+	height: 50px;
 }
 
 .page-search-column {
@@ -554,7 +568,19 @@ canvas {
 	width: 103px;
 	display: flex;
 	justify-content: flex-end;
+	position: relative;
+	border: none;
+	border-radius: 10px;
 }
+
+.period-filteration {
+	width: 100% !important;
+	color: #130F26 !important;
+	font-size: 12px !important;
+	border-radius: 10px;
+	border: none !important;
+}
+
 
 .history-wallet-table {
 	max-width: 100%;
@@ -585,7 +611,7 @@ canvas {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 	border-radius: 5px;
 	margin-bottom: 8px;
-	margin-top: 12px;
+	/* margin-top: 12px; */
 }
 
 .select-time-wrapper__icon {
@@ -752,6 +778,7 @@ canvas {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 
 .card-body__item {
@@ -765,7 +792,7 @@ canvas {
 }
 
 .row-of-all-reports-tab__operators-full-report {
-	width: 54%;
+	/* width: 54%; */
 	background-color: #FFFFFF;
 	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
 	border-radius: 10px;
@@ -779,7 +806,7 @@ canvas {
 	align-items: center;
 	border: 1px solid #C4C4C4;
 	border-radius: 15px;
-	margin-top: 21px;
+	margin-top: 19px;
 }
 
 .all-reports-tab-maxsize {
@@ -937,9 +964,25 @@ select.advanced-search-dropdown {
   outline: none;
 }
 
+.select-input-cumulative::-ms-expand {
+	display: none !important;
+}
+
+.select-input-cumulative {
+	background-color: white;
+  color: #130F26;
+	border-radius: 5px !important;
+  border: 1px solid #C4C4C4;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+	font-size: 12px;
+}
+
 .select-input::-ms-expand {
 	display: none !important;
 }
+
 .expand-select-icon {
 	position: absolute;
 	right: calc(50% - 28px);
@@ -949,8 +992,9 @@ select.advanced-search-dropdown {
 
 .expand-select-left-icon {
 	position: absolute;
-	top: 10px;
+	top: 8px;
 	left: 10px;
+	pointer-events: none;
 }
 
 
@@ -1101,7 +1145,7 @@ input:focus {
 }
 
 select option[selected]{
-	background-color: red !important;
+	/* background-color: red !important; */
 }
 
 .sumbit-advanced-search-button {
@@ -1113,6 +1157,93 @@ select option[selected]{
 	border: none;
 	padding: 8px 24px;
 }
+
+#medium-size__chart {
+	height: 150px !important;
+	width: 100% !important;
+}
+
+.expand-select-icon-cumulative {
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+
+.parent-wrapper {
+	display: none;
+	justify-content: flex-start;
+	widtH: 100%;
+}
+
+.chart-section-wrapper {
+	text-align: center;
+	margin-right: 30px;
+	background-color: red;
+	background: #FFFFFF;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	padding: 24px 16px;
+	width: 25%;
+}
+
+.operators-services-section {
+	width: 75%;
+}
+
+.card-rows {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 24px;
+}
+
+.service-card {
+	background: #FFFFFF;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	width: 100%;
+	padding: 24px 24px 32px;
+}
+
+.right-service-card {
+	margin-left: 30px !important;
+}
+
+.service-card-header {
+	background-color: white;
+	text-align: center;
+	font-size: 18px;
+	line-height: 31px;
+}
+
+.card-content-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.mid-card-item {
+	margin: 32px 0;
+}
+
+#maximum-size__chart {
+	display: block !important;
+	height: 220px !important;
+	width: 432px !important;
+	position: relative !important;
+	bottom: 22px !important;
+	left: 82px !important;
+}
+
+#minimum-size__chart {
+	position: relative;
+	bottom: 28px !important;
+}
+
+.exel-btn-history-wallet {
+	background-color: red;
+	display: flex;
+	font-size: 12px;
+}
+
 
 /* ---------------------------- 320 PX ------------------------- */
 @media (min-width: 320px) {
@@ -1137,25 +1268,26 @@ select option[selected]{
 	}
 	
 }
-/* ---------------------------- 320 PX ------------------------- */
+/* ---------------------------- 768 PX ------------------------- */
 @media (min-width: 768px) {
 	.select-time-wrapper {
 		margin-top: 0;
 		margin-bottom: 0;
-		width: 215px;
+		width: 272px;
+		margin-right: auto;
 	}
 	.select-time-wrapper__text {
-		display: none;
+		display: inline;
 	}
 	.benefit-wrapper {
-		width: 234px;
+		width: 264px;
 		height: 40px;
 	}
 	.benefit-filter-section {
 		display: flex;
 		flex-direction: row-reverse;
-		justify-content: space-between;
-		margin-top: 12px;
+		justify-content: flex-end;
+		margin-top: 24px;
 	}
 	.services-wrapper {
 		flex-direction: column;
@@ -1167,6 +1299,10 @@ select option[selected]{
 	}
 	.row-of-all-reports-tab {
 		display: none;
+	}
+	#minimum-size__chart {
+		position: relative;
+		bottom: 28px !important;
 	}
 }
 
@@ -1194,8 +1330,8 @@ select option[selected]{
 		width: 100%;
 	}
 	.container-content {
-		margin-right: 12px;
-		margin-left: 18px;
+		margin-right: 18px;
+		margin-left: 24px;
 	}
 	.responsive-tab {
 		display: none;
@@ -1214,6 +1350,7 @@ select option[selected]{
 	.filter-section__main-row {
 		width: 100%;
 		flex-direction: row;
+		margin-bottom: 16px;
 	}
 	.filter-section__search-inputs {
 		display: flex;
@@ -1222,9 +1359,12 @@ select option[selected]{
 	}
 	.page-action-buttons-column {
 		margin-left: 24px;
+		height: 48px;
+		width: 98px !important;
 	}
 	.tabs {
 		display: flex;
+		/* padding-left: 18px; */
 	}
 	.operators-wrapper {
 		flex-direction: column;
@@ -1248,6 +1388,7 @@ select option[selected]{
 	.row-of-all-reports-tab {
 		display: flex;
 		margin-top: 12px;
+		width: 100%;
 	}
 	.header__title {
 		font-size: 18px;
@@ -1259,16 +1400,19 @@ select option[selected]{
 	}
 	.row-of-all-reports-tab__services {
 		width: 100%;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 	.row-of-all-reports-tab__operators {
 		width: 100%;
 	}
 	.row-of-all-reports-tab__operators-full-report {
 		width: 100%;
-		display: block;
+		/* display: block; */
 	}
 	.operator-card {
-		width: 90%;
+		width: 100%;
+		/* margin-left: 18px; */
 	}
 	.advanced-search-button {
 		display: none;
@@ -1282,12 +1426,12 @@ select option[selected]{
 	}
 	.sale-analyze__title {
 		font-size: 16px;
-		font-weight: 27px;
+		line-height: 27px;
 		font-weight: 400;
 	}
-	.sidebar__items {
+	/* .sidebar__items {
 		margin-left: 63px;
-	}
+	} */
 	.sidebar__logout-icon {
 		margin-right: 0;
 	}
@@ -1296,10 +1440,68 @@ select option[selected]{
 		line-height: 27px;
 		padding: 10px 24px;
 		margin-right: auto;
+		width: 164px;
 	}
 	.excel-download {
 		width: 24px;
 		height: 24px;
+	}
+	.responsive-table__table-cell {
+		height: 75px;
+		font-size: 14px;
+	}
+	.select-time-wrapper {
+		margin-top: 0;
+		margin-bottom: 0;
+		width: 336px;
+		margin-right: auto;
+	}
+	.chart-legend__operator {
+		font-size: 14px;
+		line-height: 27px;
+	}
+	.benefit-wrapper {
+		width: 31%;
+	}
+	#sale-report {
+		width: 100%;
+	}
+	.select-time-wrapper {
+		width: 336px;
+	}
+	.select-time-wrapper__icon {
+		margin-left: 12px;
+	}
+	.benefit-filter-section {
+		/* padding-left: 20px; */
+	}
+	.select-time-wrapper__text {
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.benefit-wrapper__item {
+		font-size: 14px;
+		line-height: 27px;
+	}
+	#medium-size__chart {
+		position: relative;
+		bottom: 24px;
+	}
+	.filter-section__search-icon {
+		width: 24px;
+		height: 24px;
+		top: 12px;
+	}
+	.responsive-table-row-item {
+		height: 75px;
+	}
+	.search-inputs__search-input {
+		height: 48px;
+		width: 215px;
+		padding-right: 42px;
+	}
+	.expand-select-left-icon {
+		top: 16px;
 	}
 }
 
@@ -1308,9 +1510,12 @@ select option[selected]{
 	.sidebar {
 		width: 15%;
 	}
+	.parent-wrapper {
+		display: flex;	
+	}
 	.sidebar-items__item {
 		justify-content: flex-start;
-		width: 140% !important;
+		width: 100% !important;
 		border-radius: 10px;
 	}
 	.item-text {
@@ -1318,7 +1523,6 @@ select option[selected]{
 	}
 	.personal-details__name {
 		text-align: center;
-		margin-top: 20px;
 	}
 	.personal-details {
 		display: block;
@@ -1353,6 +1557,7 @@ select option[selected]{
 	.row-of-all-reports-tab__operators {
 		flex-direction: row;
 		justify-content: flex-start;
+		margin-right: 30px;
 	}
 	.service-details {
 		min-height: 200px;
@@ -1360,6 +1565,7 @@ select option[selected]{
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
 		border-radius: 10px;
 		padding: 24px;
+		width: 90%;
 	}
 	.service-content {
 		display: flex;
@@ -1387,6 +1593,7 @@ select option[selected]{
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
 		border-radius: 10px;
 		padding: 24px;
+		width: 90%;
 	}
 	.service-content-benefit__header {
 		margin-bottom: 32px;
@@ -1394,17 +1601,60 @@ select option[selected]{
 	}
 
 	.operator-card {
-		width: 100%;
-		/* margin: 0 30px; */
-		margin-bottom: 12px;
+		width: 50%;
+		margin: 0;
 	}
-	.operator-card:first-child {
-		margin-left: 12px;
-	}
-	.operator-card:last-child {
-		margin-right: 12px;
+	.mid-operation {
+		margin: 0 30px;
 	}
 	.benefit-wrapper {
 		display: none;
+	}
+	.tab-content {
+		width: 100% !important;
+	}
+	.max-size-service-cards {
+		margin-right: 30px !important;
+	}
+	.tabs {
+		padding-left: 104px;
+	}
+	.tabs-mask {
+		background-color: #FCFCFC;
+	}
+	.select-time-wrapper {
+		width: 25%;
+		padding: 8px 12px 8px 16px;
+	}
+	.select-time-wrapper__item {
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.select-time-wrapper__icon {
+		width: 24px;
+		height: 24px;
+		margin-left: 12px;
+	}
+	.benefit-filter-section {
+		padding-left: 0;
+		margin-bottom: 16px;
+		width: 100%;
+	}
+	.container-content {
+		margin: 0 30px 0 116px;
+	}
+	.last-card-rows {
+		margin: 0 !important;
+	}
+	.page-header {
+		position: relative;
+		padding: 18px 30px 18px 116px;
+	}
+}
+
+/* ---------------------------- 1824 PX ---------------------------- */
+@media (min-width: 1824px) {
+	#maximum-size__chart {
+		left: 42px !important;
 	}
 }
