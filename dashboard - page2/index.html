@@ -69,16 +69,15 @@
       <header class="responsive-header">
         <div class="responsive-header__responsive-menu">
           <img class="responsive-menu__icon" src="./images/menu.svg" onclick="handleShowMenu()">
-          <span>گزارشات</span>
-          <img src="./images/masih.JPG" class="responsive-menu__person-image">
+          <span class="resposive-page-title">داشبرد</span>
           <div class="menu-links">
             <div class="menu-links__header">
               <img class="responsive-menu__close-icon" src="./images/close-menu.svg" onclick="handleHideMenu()">
               <div class="header__logo-wrapper">
                 <img class="setare-logo" src="./images/setareaval.svg">
                 <span>پنل مدیریت</span>
+                
               </div>
-              <img src="./images/masih.JPG" class="responsive-menu__person-image">
             </div>
             <ul class="menu-links__body">
               <li class="body__item active-item">
@@ -136,19 +135,98 @@
           </div>
         </div>
         <div class="page-header__notification">
-          <img src="./images/Notification.svg" class="notification__icon">
-          <img src="./images/masih.JPG" class="notification__icon-person">
+          <div class="choice-period-time">
+            <button class="choice-period-time-button"><img src="./images/calendar-search.svg" width="16" height="16" style="margin-left: 8px;">انتخاب بازه زمانی</button>
+          </div>
         </div>
       </header>
       
       <main>
       <!-- choice period of time -->
-      <div class="choice-period-time">
-        <button class="choice-period-time-button"><img src="./images/calendar-search.svg" width="16" height="16" style="margin-left: 8px;">انتخاب بازه زمانی</button>
-      </div>
+      
       
       <!-- operators -->
       <div class="operators-wrapper">
+        
+        
+        <div class="operator">
+          <div class="operator-header">
+            <img src="./images/hamrah-icon.svg" width="24" height="24">
+            <span class="operator-name">همراه اول</span>
+          </div>
+          <div class="operator-details-row">
+            <div class="operator-details__key">
+              <img src="./images/charge-simcard-icon.svg" width="24" height="24">
+              <span class="operator-service-name">شارژ:</span>
+            </div>
+            <div class="operator-details__value-wrapper">
+              <span class="operator-details__value">۱۲۱,۱۲۳ ریال</span>
+            </div>
+          </div>
+          <div class="operator-details-row">
+            <div class="operator-details__key">
+              <img src="./images/internet-icon.svg" width="24" height="24">
+              <span class="operator-service-name">اینترنت:</span>
+            </div>
+            <div class="operator-details__value-wrapper">
+              <span class="operator-details__value">۱۲۱,۱۲۳ ریال</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operator">
+          <div class="operator-header">
+            <img src="./images/mtn-irancell.svg" width="24" height="24">
+            <span class="operator-name">ایرانسل</span>
+          </div>
+          <div class="operator-details-row">
+            <div class="operator-details__key">
+              <img src="./images/charge-simcard-icon.svg" width="24" height="24">
+              <span class="operator-service-name">شارژ:</span>
+            </div>
+            <div class="operator-details__value-wrapper">
+              <span class="operator-details__value">۱۲۱,۱۲۳ ریال</span>
+            </div>
+          </div>
+          <div class="operator-details-row">
+            <div class="operator-details__key">
+              <img src="./images/internet-icon.svg" width="24" height="24">
+              <span class="operator-service-name">اینترنت:</span>
+            </div>
+            <div class="operator-details__value-wrapper">
+              <span class="operator-details__value">۱۲۱,۱۲۳ ریال</span>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="operator">
+          <div class="operator-header">
+            <img src="./images/rightel.svg" width="24" height="24">
+            <span class="operator-name">رایتل</span>
+          </div>
+          <div class="operator-details-row">
+            <div class="operator-details__key">
+              <img src="./images/charge-simcard-icon.svg" width="24" height="24">
+              <span class="operator-service-name">شارژ:</span>
+            </div>
+            <div class="operator-details__value-wrapper">
+              <span class="operator-details__value">۱۲۱,۱۲۳ ریال</span>
+            </div>
+          </div>
+          <div class="operator-details-row">
+            <div class="operator-details__key">
+              <img src="./images/internet-icon.svg" width="24" height="24">
+              <span class="operator-service-name">اینترنت:</span>
+            </div>
+            <div class="operator-details__value-wrapper">
+              <span class="operator-details__value">۱۲۱,۱۲۳ ریال</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="operators-wrapper">
         <div class="operator">
           <div class="operator-header">
             <img src="./images/hamrah-icon.svg" width="24" h eight="24" style="margin-left: 8px;" >
@@ -197,59 +275,62 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
         
         
         <!-- 320 and 768 and 992 -->
         <div class="information-conteiner">
-        <div class="content-item">
-          <span class="content-title">نمودار حجم فروش</span>
-          <div class="figure">
-            <canvas id="line-chart"></canvas>
+          <div class="content-item">
+            <span class="content-title">نمودار حجم فروش</span>
+            <div class="figure">
+              <canvas id="line-chart"></canvas>
+            </div>
           </div>
-        </div>
         <div class="wallet-history-and-operator-sales-wrapper">
 
           <div class="operators-sale">
             <span class="content-title">نمودار فروش به تفکیک اپراتور</span>
             <div class="operator-sales-seperate-figure">
-              <div  style="display: flex;width: 100%; justify-content: space-between; background-color: #F7F7F7; padding: 8px; border-radius: 10px; margin-bottom: 12px;">
-                <div class="operator-sale__operator-name operator-sale__operator-name-active" onclick="handleChangeTab(1)">همراه اول</div>
-                <div class="operator-sale__operator-name" onclick="handleChangeTab(2)">ایرانسل</div>
-                <div class="operator-sale__operator-name" onclick="handleChangeTab(3)">رایتل</div>
-              </div>
-              <div style="display: flex; justify-content: space-between; margin-top: 24px;">
-                <div style="width: 30%;">
-                  <div class="services-percent-row">
-                    <div style="display: flex; align-items: center;">
-                      <span style="width: 6px; height: 6px; background-color: #5D5FEF; margin-left: 8px; border-radius: 100%;"></span>
-                      <span class="services-percent-row-service-name">شارژ</span>
-                    </div>
-                    <span class="services-percent-row-service-percent">۶۰٪</span>
-                  </div>
-                  <div class="services-percent-row">
-                    <div style="display: flex; align-items: center;">
-                      <span style="width: 6px; height: 6px; background-color: #EF5DA8; margin-left: 8px; border-radius: 100%;"></span>
-                      <span class="services-percent-row-service-name">اینترنت</span>
-                    </div>
-                    <span class="services-percent-row-service-percent">۶۰٪</span>
-                  </div>
-                  <div class="services-percent-row">
-                    <div style="display: flex; align-items: center;">
-                      <span style="width: 6px; height: 6px; background-color: #00C6D2; margin-left: 8px; border-radius: 100%;"></span>
-                      <span class="services-percent-row-service-name">پین</span>
-                    </div>
-                    <span class="services-percent-row-service-percent">۶۰٪</span>
-                  </div>
-                </div>
-                
-                
                 <div style="margin-top: 0px; position: relative;">
                   <canvas id="myChart"></canvas>
-                  <span style="position: absolute; left: 39%;
-                  bottom: 35%; color: #57BE6C; font-size: 18px;">۶۵٪ <img src="./images/Polygon 1.svg" width="8px" height="8px"></span>
+                  <span class="my-chart-percent">۶۵٪ <img src="./images/Polygon 1.svg" width="8px" height="8px"></span>
                 </div>
-              </div>
+                <div class="mobile-chart-lagends">
+                  <div class="operator-legend">
+                    <div>
+                      <div class="operator-indicator charge-indicator"></div>
+                    </div>
+                    <div>
+                      <div class="operator-chart-legend-service-name">شارژ</div>
+                    </div>
+                    <div>
+                      <span class="operator-chart-legend-service-percent">۲۵٪</span>
+                    </div>
+                  </div>
+                  <div class="operator-legend">
+                    
+                    <div>
+                      <div class="operator-indicator internet-indicator"></div>
+                    </div>
+                    <div>
+                      <span class="operator-chart-legend-service-name">اینترنت</span>
+                    </div>
+                    <div>
+                      <span class="operator-chart-legend-service-percent">۲۵٪</span>
+                    </div>
+                  </div>
+                  <div class="operator-legend">
+                    <div>
+                      <div class="operator-indicator pin-indicator"></div>
+                    </div>
+                    <div>
+                      <span class="operator-chart-legend-service-name">پین</span>
+                    </div>
+                    <div>
+                      <span class="operator-chart-legend-service-percent">۲۵٪</span>
+                    </div>
+                  </div>
+                </div>
               <div class="operator-service">
                 <div style="margin-left: auto; margin-bottom: 16px;">
                   <img src="./images/charge-simcard-icon.svg" width="24px" height="24px" style="margin-left: 8px;">
@@ -305,7 +386,7 @@
                 </div>
                 <div class="value">
                   <div style="display: flex; flex-direction: column;margin-left: 4px;">
-                    <span style="color: #27AE60; font-size: 12px; line-height: 20px;">۳۰۰۰۰۰۰۰ +</span>
+                    <span style="color: #3AA65E; font-size: 12px; line-height: 20px;">۳۰۰۰۰۰۰۰ +</span>
                     <span style="font-size: 10px; color: #C4C4C4;">۲۴.۲۴۱۲۴.۱۴۱۴</span>
                   </div>
                   <div class="arrow-up-wrapper">
@@ -320,7 +401,7 @@
                 </div>
                 <div class="value">
                   <div style="display: flex; flex-direction: column;margin-left: 4px;">
-                    <span style="color: #27AE60; font-size: 12px; line-height: 20px;">۳۰۰۰۰۰۰۰ +</span>
+                    <span style="color: #3AA65E; font-size: 12px; line-height: 20px;">۳۰۰۰۰۰۰۰ +</span>
                     <span style="font-size: 10px; color: #C4C4C4;">۲۴.۲۴۱۲۴.۱۴۱۴</span>
                   </div>
                   <div class="arrow-up-wrapper">
@@ -336,31 +417,39 @@
         <!-- 1366 -->
         <div class="information-container-desktop">
           <div class="right-column">
-            <div style="background-color: white; padding: 16px; border-radius: 15px; margin-bottom: 12px;">
-              <div class="line-chart-legend">
-                <div class="line-chart-desktop-header-section">
-                  <div>
-                    <span style="width: 6px; height: 6px; background-color: #56C5D0; margin-left: 8px; border-radius: 100%;display: inline-block;"></span>
-                    <span>همراه اول</span>
+            <div class="chart-wrapper-desktop">
+              
+              <div class="myChart-desktop-legend">
+                <div class="operators-name">
+                  <div class="operator-name">
+                    <div class="operator-name__operator-indicator hamrah-indicator"></div>
+                    <span class="operator-name__value">همراه اول</span>
                   </div>
-                  <div>
-                    <span style="width: 6px; height: 6px; background-color: #FFBE00; margin-left: 8px; border-radius: 100%;display: inline-block;"></span>
-                    <span>ایرانسل</span>
+                  <div class="operator-name">
+                    <div class="operator-name__operator-indicator irancell-indicator"></div>
+                    <span class="operator-name__value">ایرانسل</span>
                   </div>
-                  <div>
-                    <span style="width: 6px; height: 6px; background-color: #9B2776; margin-left: 8px; border-radius: 100%; display: inline-block;"></span>
-                    <span>رایتل</span>
+                  <div class="operator-name">
+                    <div class="operator-name__operator-indicator rightel-indicator"></div>
+                    <span class="operator-name__value">رایتل</span>
                   </div>
                 </div>
-                <div class="line-chart-desktop-header-section">
-                  <select name="service" class="line-chart-desktop-header-section-select-component">
-                    <option value="charge">شارژ</option>
-                    <option value="internet">اینترنت</option>
-                    <option value="pin">پین</option>
-                  </select>
+                <div style="position: relative; width: 85px">
+                  <select
+                      name="condition"
+                      id="operator"
+                      class="search-inputs select-input-no-mobile right-input"
+                    >
+                      <option value="topup-type" hidden>اینترنت</option>
+                      <option value="">اینترنت</option>
+                      <option value="">شارژ</option>
+                      <option value="">پین</option>
+                    </select>
+                    <img src="./images/Arrow - Down 2.svg" class="expand-select-left-icon-no-mobile">
                 </div>
               </div>
-              <canvas id="myChart-desktop" style="margin-top: 32px;"></canvas>
+
+              <canvas id="myChart-desktop" ></canvas>
             </div>
             <div>
               <span style="font-size: 16px; font-weight: bold; text-align: center;">تاریخچه شارژ کیف پول</span>
@@ -370,6 +459,25 @@
                   <span class="table-header-item">مانده (ریال)</span>
                   <span class="table-header-item">بابت</span>
                   <span class="table-header-item">تاریخ</span>
+                </div>
+                
+                <div class="table-row">
+                  <span class="table-row-item increase-wallet-value">۳۰۰۰۰۰۰ +</span>
+                  <span class="table-row-item">۲۴,۱۲۳,۴۵۶,۷۸۹</span>
+                  <span class="table-row-item">افزایش شارژ کیف پول</span>
+                  <span class="table-row-item">۱۴:۲۵:۰۰ - ۱۴۰۰/۰۵/۱۰</span>
+                </div>
+                <div class="table-row">
+                  <span class="table-row-item increase-wallet-value">۳۰۰۰۰۰۰ +</span>
+                  <span class="table-row-item">۲۴,۱۲۳,۴۵۶,۷۸۹</span>
+                  <span class="table-row-item">افزایش شارژ کیف پول</span>
+                  <span class="table-row-item">۱۴:۲۵:۰۰ - ۱۴۰۰/۰۵/۱۰</span>
+                </div>
+                <div class="table-row">
+                  <span class="table-row-item increase-wallet-value">۳۰۰۰۰۰۰ +</span>
+                  <span class="table-row-item">۲۴,۱۲۳,۴۵۶,۷۸۹</span>
+                  <span class="table-row-item">افزایش شارژ کیف پول</span>
+                  <span class="table-row-item">۱۴:۲۵:۰۰ - ۱۴۰۰/۰۵/۱۰</span>
                 </div>
                 <div class="table-row">
                   <span class="table-row-item increase-wallet-value">۳۰۰۰۰۰۰ +</span>
@@ -388,41 +496,39 @@
           </div>
           <div class="left-column">
             <div class="operator-sales-seperate-figure">
-              <div  style="display: flex;width: 100%; justify-content: space-between; background-color: #F7F7F7; padding: 8px; border-radius: 10px; margin-bottom: 12px;">
-                <div class="operator-sale__operator-name operator-sale__operator-name-active" onclick="handleChangeTab(4)">همراه اول</div>
-                <div class="operator-sale__operator-name" onclick="handleChangeTab(5)">ایرانسل</div>
-                <div class="operator-sale__operator-name" onclick="handleChangeTab(6)">رایتل</div>
+              <div class="circle-chart-wrapper">
+                <div class="circle-chart-wrapper__title">
+                  <canvas id="Doughnut-desktop"></canvas>
+                  <span class="circle-chart-wrapper__title-value">نمودار فروش کل به تفکیک اپراتور </span>
+                </div>
               </div>
-              <div style="display: flex; justify-content: space-between; margin-top: 24px;">
-                <div style="width: 30%;">
-                  <div class="services-percent-row">
-                    <div style="display: flex; align-items: center;">
-                      <span style="width: 6px; height: 6px; background-color: #5D5FEF; margin-left: 8px; border-radius: 100%;"></span>
-                      <span class="services-percent-row-service-name">شارژ</span>
-                    </div>
-                    <span class="services-percent-row-service-percent">۶۰٪</span>
+              <div class="circle-chart-legend">
+                <div class="circle-chart-legend__service-wrapper">
+                  <div class="right-col">
+                    <div class="operator-indicator charge-indicator"></div>
+                    <span class="operator-service-name-desktop">شارژ</span>
                   </div>
-                  <div class="services-percent-row">
-                    <div style="display: flex; align-items: center;">
-                      <span style="width: 6px; height: 6px; background-color: #EF5DA8; margin-left: 8px; border-radius: 100%;"></span>
-                      <span class="services-percent-row-service-name">اینترنت</span>
-                    </div>
-                    <span class="services-percent-row-service-percent">۶۰٪</span>
-                  </div>
-                  <div class="services-percent-row">
-                    <div style="display: flex; align-items: center;">
-                      <span style="width: 6px; height: 6px; background-color: #00C6D2; margin-left: 8px; border-radius: 100%;"></span>
-                      <span class="services-percent-row-service-name">پین</span>
-                    </div>
-                    <span class="services-percent-row-service-percent">۶۰٪</span>
+                  <div class="left-col">
+                    ۱۵٪
                   </div>
                 </div>
-                
-                
-                <div style="margin-top: 0px; position: relative;">
-                  <canvas id="Doughnut-desktop"></canvas>
-                  <span style="position: absolute; left: 42%;
-                  bottom: 40%; color: #57BE6C; font-size: 18px;">۶۵٪ <img src="./images/Polygon 1.svg" width="8px" height="8px"></span>
+                <div class="circle-chart-legend__service-wrapper">
+                  <div class="right-col">
+                    <div class="operator-indicator internet-indicator"></div>
+                    <span class="operator-service-name-desktop">اینترنت</span>
+                  </div>
+                  <div class="left-col">
+                    ۱۵٪
+                  </div>
+                </div>
+                <div class="circle-chart-legend__service-wrapper">
+                  <div class="right-col">
+                    <div class="operator-indicator pin-indicator"></div>
+                    <span class="operator-service-name-desktop">پین</span>
+                  </div>
+                  <div class="left-col">
+                    ۱۵٪
+                  </div>
                 </div>
               </div>
               <div class="operator-service">
@@ -534,9 +640,9 @@
     new Chart(document.getElementById("line-chart"), {
     type: 'line',
     data: {
-      labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+      labels: [1500,1600,1700,1750,1800,1850],
       datasets: [{ 
-          data: [86,114,106,106,107,111,133,221,783,2478],
+          data: [86,114,106,106,107,111],
           label: "",
           borderColor: "#44C3CB",
           fill: false
@@ -554,6 +660,9 @@
       ]
     },
     options: {
+            font: {
+              size: 56
+            },
       scales: {
             xAxes: [{
                 display: true,
@@ -598,7 +707,7 @@
   });
 
 
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var xValues = ["Italy", "France", "Spain", "USA", "Argentina","USA","USA","USA","USA",];
 var yValues = [55, 49, 44, 24, 15];
 var barColors = [
   "#b91d47",
