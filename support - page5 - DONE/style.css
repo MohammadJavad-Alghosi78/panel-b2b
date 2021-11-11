@@ -13,6 +13,67 @@ html, body {
 	display: flex;
 }
 
+.see-datails-modal-body {
+	margin-top: 18px;
+}
+
+.broker-name-text, .broker-name-value {
+	font-size: 12px;
+	line-height: 20px;
+	margin-bottom: 16px;
+}
+
+.broker-name-text {
+	color: #C4C4C4;
+}
+
+.danger-see-details {
+	color: #EB5757;
+}
+
+.modal-body__first-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+.modal-body__first-row-item {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	text-align: center;
+}
+.modal-body__first-row-item:first-child {
+	border-left: 2px solid #F0F0F0;
+}
+
+.modal-body__second-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 20px;
+}
+
+.message-holder {
+	/* margin-top: 12px; */
+	border: 1px solid #C4C4C4;
+	box-sizing: border-box;
+	border-radius: 5px;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: right;
+	padding: 10px;
+}
+
+.sucess-see-details {
+	color: #3AA65E;	
+}
+
+.third-row {
+	margin-top: 16px;
+}
+
 /* ---------------------------- SIDEBAR ---------------------------- */
 .sidebar {
 	display: none;
@@ -189,7 +250,7 @@ html, body {
 .menu-links__header {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	padding-bottom: 12px;
 	border-bottom: 1px solid #F3F3F3;
 }
@@ -197,7 +258,12 @@ html, body {
 .header__logo-wrapper {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	margin: 0 auto;
+}
+
+.management-panel {
+	display: none;
 }
 
 .setare-logo {
@@ -223,6 +289,7 @@ html, body {
 	align-items: center;
 	padding: 16px;
 	max-width: 100%;
+	color: black;
 }
 
 .responsive-menu-item__title {
@@ -549,7 +616,7 @@ button {
 	padding: 0 !important;
 	margin: 0 !important;
 	border: none !important;
-	display: none !important;
+	/* display: none !important; */
 }
 
 .modal-header__modal-title {
@@ -557,6 +624,7 @@ button {
 	margin: 0 auto 24px !important;
 	font-size: 20px;
 	line-height: 34px;
+	display: inline-block;
 }
 
 .close {
@@ -616,6 +684,7 @@ select.advanced-search-dropdown {
 }
 
 .modal-close-icon {
+	cursor: pointer;
 	position: absolute;
 	top: 20px;
 	right: 20px;
@@ -630,13 +699,14 @@ select.advanced-search-dropdown {
 	border: none !important;
 }
 
+
 .modal-content {
 	position: relative;
 	padding: 32px 12px;
 }
 
 .modal-footer {
-	padding-bottom: 32px !important;
+	margin-top: 32px;
 }
 
 .modal-footer-content {
@@ -649,7 +719,7 @@ select.advanced-search-dropdown {
 	display: none;
 	display: flex;
 	justify-content: flex-end;
-	padding-left: 32px;
+	/* padding-left: 32px; */
 }
 
 .submit-button-nomobile {
@@ -684,81 +754,6 @@ select.advanced-search-dropdown {
 	margin-left: 32px;
 }
 
-.container-content {
-  margin-top: 24px;
-}
-
-.operator-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.operator-title__operator-logo {
-  margin-left: 8px;
-}
-
-.operator-name {
-  color: #130F26;
-  font-size: 16px;
-  line-height: 27px;
-}
-
-.operator-discounts {
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(19, 15, 38, 0.05);
-  border-radius: 10px;
-  padding: 24px 16px;
-  display: flex;
-  flex-direction: column;
-}
-
-.operator-service {
-  text-align: center;
-}
-
-.discount-number {
-  display: block;
-  text-align: center;
-  border: 1px solid #C4C4C4;
-  box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 16px;
-  padding: 8px;
-}
-
-.mid-service {
-  margin: 32px 0;
-}
-
-.mid-operator {
-  margin: 32px 0;
-}
-
-.operator-dicount-service-title {
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.no-mobile {
-  display: none;
-}
-
-.full-wrapper {
-  background-color: white;
-  border-radius: 15px;
-  padding: 32px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.see-discounts-text {
-  display: none;
-}
-
-
 /* ---------------------------- 320 PX ------------------------- */
 @media (min-width: 320px) {
 	.sidebar {
@@ -771,15 +766,106 @@ select.advanced-search-dropdown {
 
 /* ---------------------------- 768 PX ------------------------- */
 @media (min-width: 768px) {
-  .mobile-content {
-    display: none;
-  }
-  .no-mobile {
-    display: block;
-  }
-  .operator-values {
-    width: 225px;
-  }
+	.message-holder {
+		border-radius: 15px;
+	}
+	.broker-name-text, .broker-name-value {
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.modal-body__second-row {
+		margin-top: 24px;
+	}
+	.action-buttons {
+		margin-top: 0;
+		justify-content: flex-end;
+	}
+	.filter-section {
+		display: flex;
+		justify-content: space-between;
+	}
+	.filter-inputs {
+		display: flex;
+	}
+	.action-button-wrapper__excel-button {
+		margin-right: 16px;
+	}
+	.modal-header {
+		display: flex !important;
+	}
+	.ticket-subject-hint {
+		margin-bottom: 16px !important;
+		font-size: 16px;
+	}
+	.ticket-subject-input {
+		border-radius: 10px;
+		font-size: 14px;
+	}
+	.ticket-description__hint {
+		margin-bottom: 16px !important;
+	}
+	.ticket-description__textfield {
+		border-radius: 15px;
+		height: 127px;
+		resize: none;
+	}
+	.modal-content {
+		padding: 32px !important;
+		border-radius: 20px !important;
+	}
+	.modal-footer {
+		border-radius: 20px !important;
+	}
+	.modal-footer-content {
+		display: none;
+	}
+	.submit-button-nomobile {
+		display: block;
+	}
+	.search-inputs__timestep {
+		cursor: pointer;
+		font-size: 120px !important;
+		line-height: 20px !important;
+		height: 32px !important;
+		font-size: 12px !important;
+		line-height: 20px;
+		padding: 6px 22px !important;
+		color: #000000 !important;
+		border: none !important;
+		-moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+		border-radius: 10px !important;
+	}
+	.arrow-select-icon {
+		position: absolute;
+		right: 68px;
+		z-index: 0;
+		pointer-events: none;
+	}
+	.see-details-icon {
+		margin-left: 4px;
+	}
+	.search-input {
+		background-color: #FFFFFF;
+		border-radius: 10px !important;
+		border: none;
+		padding: 6px 32px;
+		margin-right: 16px;
+		outline: none;
+		font-size: 12px;
+		line-height: 20px;
+	}
+	.search-input::placeholder {
+		font-size: 12px;
+	}
+	.ticket-icon {
+		margin-left: 4px;
+	}
+	.search-icon {
+		position: absolute;
+		right: 126px;
+	}
 }
 
 /* ---------------------------- 992 PX ---------------------------- */
@@ -809,6 +895,9 @@ select.advanced-search-dropdown {
 	.page-header {
 		display: flex;
 		width: 100%;
+	}
+	.container-content {
+		margin-right: 12px;
 	}
 	.wallet-charge-time-container {
 		display: flex;
@@ -878,26 +967,15 @@ select.advanced-search-dropdown {
 		padding-left: 24px;
 		padding-right: 18px;
 	}
-  .container-content {
-    margin-right: 18px;
-    padding-left: 24px;
-    margin-top: 24px;
-  }
+	.container-content {
+		padding-left: 24px;
+	}
 	.responsive-table-row-header {
 		height: 75px;
 	}
 	.responsive-table-row-item {
 		height: 75px;
 	}
-  .operator-values {
-    width: 255px;
-  }
-  .see-discounts-text {
-    font-size: 18px;
-    line-height: 31px;
-    text-align: right;
-    display: block;
-  }
 }
 
 /* ---------------------------- 1366 PX ---------------------------- */
@@ -906,6 +984,10 @@ select.advanced-search-dropdown {
 		width: 15%;
 		padding: 16px;
 	}
+	.management-panel {
+		display: block;
+	}
+	
 	.sidebar-items__item {
 		justify-content: flex-start;
 		width: 100% !important;
@@ -964,7 +1046,6 @@ select.advanced-search-dropdown {
 	}
 	.container-content {
 		padding-left: 117px;
-    margin-right: 28px;
 	}
 	.responsive-table__table-cell-header {
 		font-size: 18px;
@@ -974,7 +1055,4 @@ select.advanced-search-dropdown {
 		font-size: 16px;
 		line-height: 27px;
 	}
-  .operator-values {
-    width: 269px;
-  }
 }

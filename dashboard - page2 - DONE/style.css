@@ -52,6 +52,15 @@
   font-family: "IRANSans";
 }
 
+
+.datepicker-container.pwt-mobile-view {
+  width: 470px !important;
+  height: 487px !important;
+  position: absolute !important;
+  top: 25% !important;
+  left: 25% !important;
+}
+
 html,
 body {
   padding: 0;
@@ -71,22 +80,24 @@ body {
   display: none;
   min-height: 100vh;
   background-color: #ffffff;
-  width: 10%;
-  padding: 16px 24px;
+  width: 15%;
+  padding: 16px;
   box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 
 .sidebar__logo {
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
   border-bottom: 1px solid #c4c4c4;
   padding-bottom: 15px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .sidebar__items {
   margin-top: 31px;
-  margin-left: 31px;
+  /* margin-left: 31px; */
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -107,7 +118,6 @@ body {
   width: 100%;
   text-align: center;
   margin-top: 14px;
-  margin-left: 8px;
   justify-content: center;
 }
 
@@ -220,10 +230,14 @@ body {
   z-index: 100;
 }
 
+.body__item {
+  color: #130F26;
+}
+
 .menu-links__header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 12px;
   border-bottom: 1px solid #f3f3f3;
 }
@@ -279,6 +293,13 @@ body {
   position: relative;
 }
 
+.management-panel {
+  text-align: center;
+  display: none;
+  font-size: 16px;
+  line-height: 27px;
+}
+
 .credit__person-image {
   width: 40px;
   height: 40px;
@@ -290,7 +311,6 @@ body {
 }
 
 .credit__person-name {
-  margin-top: 16px;
   text-align: center;
   margin-bottom: 12px;
   font-weight: 400;
@@ -355,6 +375,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 130px;
+}
+
+.page-header__right-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .timezone__item {
@@ -370,6 +397,7 @@ body {
   width: 24px;
   height: 24px;
   margin-left: 8px;
+  margin-right: 39px;
 }
 
 .page-header__notification:first-child {
@@ -397,6 +425,10 @@ body {
 .choice-period-time {
   display: flex;
   justify-content: flex-start;
+}
+
+.sidebar-items__item {
+  color: black
 }
 
 .choice-period-time-button {
@@ -712,7 +744,7 @@ body {
 }
 
 .chart-wrapper-desktop {
-  height: 389px !important;
+  height: 390px !important;
   background-color: white;
   padding: 16px;
   border-radius: 15px;
@@ -959,12 +991,17 @@ main {
   .my-chart-percent {
     left: 42%;
   }
+  
 }
 
 /* ---------------------------- 992 PX ---------------------------- */
 @media (min-width: 992px) {
   main {
     padding: 0 18px;
+  }
+  .operator-service-name {
+    font-size: 14px;
+    line-height: 27px;
   }
   .increase-wallet-value {
     margin-bottom: 4px;
@@ -1040,6 +1077,7 @@ main {
   }
   .page-header {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     padding: 14px 24px;
     /* margin-bottom: 24px; */
@@ -1140,7 +1178,7 @@ main {
     font-weight: 400;
   }
   .sidebar__items {
-    margin-left: 63px;
+    /* margin-left: 63px; */
   }
   .sidebar__logout-icon {
     margin-right: 0;
@@ -1161,19 +1199,45 @@ main {
   .operator-service {
     margin-top: 24px;
   }
+  .sidebar {
+    width: 10%;
+  }
 }
 
 /* ---------------------------- 1366 PX ---------------------------- */
 @media (min-width: 1366px) {
   main {
-    padding: 0 30px 100px 116px;
+    padding-left: 10%;
+    padding-right: 30px;
+  }
+  .information-container-desktop {
+    justify-content: flex-start;
+  }
+  #myChart-desktop {
+    margin-top: 30px;
+    height: 297px !important;
+    width: 668px;
+  }
+  .operator-name__value {
+    font-size: 14px;
+    line-height: 27px;
+  }
+  .expand-select-left-icon-no-mobile {
+    top: 10px;
+  }
+  .right-input {
+    font-size: 14px;
+    line-height: 27px;
+  }
+  .sidebar__logo {
+    flex-direction: column;
   }
   .sidebar {
-    width: 15%;
+    min-width: 15% !important;
   }
   .sidebar-items__item {
     justify-content: flex-start;
-    width: 200% !important;
+    width: 100% !important;
     border-radius: 10px;
   }
   .item-text {
@@ -1181,7 +1245,6 @@ main {
   }
   .personal-details__name {
     text-align: center;
-    margin-top: 20px;
   }
   .personal-details {
     display: block;
@@ -1190,6 +1253,10 @@ main {
     margin-top: 30px;
     width: 100%;
     margin-right: 0;
+  }
+  .management-panel {
+    display: block;
+    margin-top: 8px;
   }
   .logout-text {
     display: block;
@@ -1271,7 +1338,7 @@ main {
     display: none;
   }
   .page-header {
-    padding: 14px 30px 14px 116px;
+    padding: 14px 30px 14px 10%;
   }
   .operator-sales-seperate-figure {
     padding: 24px 16px;
@@ -1282,11 +1349,11 @@ main {
   .circle-chart-wrapper__title {
     height: 135px;
   }
-  .left-column {
-    width: 30%;
-    margin-right: 30px;
-  }
   .right-column {
-    width: 100%;
+    width: calc(67% - 30px);
   }
+  .left-column {
+    margin: 24px 30px 0 0;
+  }
+  
 }

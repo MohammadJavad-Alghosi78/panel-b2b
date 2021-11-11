@@ -27,6 +27,7 @@
     <div class="sidebar">
       <div class="sidebar__logo">
         <img src="./images/setareaval.svg">
+        <span class="management-panel">پنل مدیریت</span>
       </div>
       <div class="sidebar__items">
         <a class="sidebar-items__item">
@@ -77,28 +78,28 @@
                 <span>پنل مدیریت</span>
               </div>
             </div>
-            <ul class="menu-links__body">
-              <li class="body__item">
+            <div class="menu-links__body">
+              <a href="#" class="body__item">
                 <img src="./images/dashboard-icon.svg">
                 <span class="responsive-menu-item__title">داشبرد</span>
-              </li>
-              <li class="body__item active-item">
+              </a>
+              <a href="#" class="body__item active-item">
                 <img src="./images/report.svg">
                 <span class="responsive-menu-item__title active-title">گزارشات</span>
-              </li>
-              <li class="body__item">
+              </a>
+              <a href="#" class="body__item">
                 <img src="./images/Discount.svg">
                 <span class="responsive-menu-item__title">تخفیف‌ها</span>
-              </li>
-              <li class="body__item">
+              </a>
+              <a href="#" class="body__item">
                 <img src="./images/message-question.svg">
                 <span class="responsive-menu-item__title">پشتیبانی</span>
-              </li>
-              <li class="body__item">
+              </a>
+              <a href="#" class="body__item">
                 <img src="./images/code.svg">
                 <span class="responsive-menu-item__title">مستندات فنی</span>
-              </li>
-            </ul>
+              </a>
+            </div>
             <div class="menu-links__footer">
               <div class="credit__person-name">محمدمهدی احمدی</div>
               <div class="credit-section">
@@ -131,19 +132,19 @@
             </div>
           </div>
         </div>
-        <div class="page-header__notification">
+        <!-- <div class="page-header__notification">
           <img src="./images/Notification.svg" class="notification__icon">
-        </div>
+        </div> -->
       </header>
       <div class="responsive-tab">
-        <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="wallet-history">تاریخچه شارژ کیف
+        <span onclick="handleChangeTab(this)" class="responsive-tab__tab  active-responsive-tab" data-target="wallet-history">تاریخچه شارژ کیف
           پول</span>
           
           <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="send-money-report">گزارش
             واریز</span>
         <span onclick="handleChangeTab(this)" class="responsive-tab__tab" data-target="sale-report">گزارش تجمعی
           فروش</span>
-        <span onclick="handleChangeTab(this)" class="responsive-tab__tab active-responsive-tab"
+        <span onclick="handleChangeTab(this)" class="responsive-tab__tab"
           data-target="direct-charge-report">گزارش شارژ
           مستقیم</span>
       </div>
@@ -155,7 +156,7 @@
           <div onclick="handleChangeTab(this)" data-target="send-money-report" class="tabs__tab">گزارش واریزی</div>
           <span class="divider"></span>
           <div onclick="handleChangeTab(this)" data-target="sale-report" class="tabs__tab">گزارش تجمعی فروش</div><span class="divider"></span>
-          <div onclick="handleChangeTab(this)" data-target="direct-charge-report" class="tabs__tab active-tab">گزارش شارژ
+          <div onclick="handleChangeTab(this)" data-target="direct-charge-report" class="tabs__tab active-tab last-tab">گزارش شارژ
             مستقیم
           </div>
           
@@ -166,7 +167,7 @@
 
       <!-- CONTENT OF TABS -->
       <div class="container-content">
-        <div id="wallet-history" class="tab-content">
+        <div id="wallet-history" class="tab-content show-tab">
           <div class="filter-section">
             <div class="filter-section__main-row">
               <div class="filter-section__search-inputs">
@@ -175,7 +176,7 @@
                   <input type="text" placeholder="جستجو" class="search-inputs__search-input">
                 </div>
                 <div class="page-action-buttons-column">
-                  <img src="./images/Arrow - Down 3 select tag.svg" style="position: absolute; top: 16px; left: 10px; pointer-events: none;">
+                  <img src="./images/Arrow - Down 3 select tag.svg" style="position: absolute; top: 18px; left: 10px; pointer-events: none;">
                   <select
                       name="period-filter"
                       id="period-filter"
@@ -737,7 +738,7 @@
             </div>
           </div>
         </div>
-        <div id="direct-charge-report" class="tab-content show-tab">
+        <div id="direct-charge-report" class="tab-content">
           <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">

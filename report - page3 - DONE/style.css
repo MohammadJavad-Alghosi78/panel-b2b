@@ -25,7 +25,8 @@ html, body {
 }
 
 .sidebar__logo {
-	width: 100%;
+	width: 50%;
+	margin: 0 auto;
 	border-bottom: 1px solid #C4C4C4;
 	padding-bottom: 15px;
 	text-align: center;
@@ -175,9 +176,13 @@ html, body {
 .menu-links__header {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	padding-bottom: 12px;
 	border-bottom: 1px solid #F3F3F3;
+}
+
+.body__item {
+	color: black;
 }
 
 .header__logo-wrapper {
@@ -385,6 +390,11 @@ html, body {
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 0;
+	background-color: #FCFCFC;
+}
+
+.last-tab {
+	margin-left: 28px;
 }
 
 .divider {
@@ -474,6 +484,11 @@ html, body {
    -webkit-border-radius: 7.5px;
    border-radius: 7.5px;
 	 margin-left: 8px;
+}
+
+.management-panel {
+	display: none;
+	margin-top: 8px;
 }
 
 .hamrahaval-before::before {
@@ -825,7 +840,7 @@ canvas {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 24px 0 18px 0;
+	margin: 12px 0 18px 0;
 }
 
 .advanced-search-button {
@@ -1244,6 +1259,10 @@ select option[selected]{
 	font-size: 12px;
 }
 
+.benefit-filter-section {
+	margin-top: 12px;
+}
+
 
 /* ---------------------------- 320 PX ------------------------- */
 @media (min-width: 320px) {
@@ -1266,6 +1285,7 @@ select option[selected]{
 	.row-of-all-reports-tab {
 		display: none;
 	}
+	
 	
 }
 /* ---------------------------- 768 PX ------------------------- */
@@ -1310,6 +1330,10 @@ select option[selected]{
 @media (min-width: 992px) {
 	.sidebar {
 		display: block;
+	}
+	.period-filteration {
+		font-size: 16px !important;
+		line-height: 27px;
 	}
 	.personal-details__name {
 		font-size: 14px;
@@ -1510,6 +1534,14 @@ select option[selected]{
 	.sidebar {
 		width: 15%;
 	}
+	.management-panel {
+		display: block;
+		font-size: 16px;
+		line-height: 27px;
+	}
+	.last-tab {
+		margin-left: 14px;
+	}
 	.parent-wrapper {
 		display: flex;	
 	}
@@ -1649,6 +1681,10 @@ select option[selected]{
 	.page-header {
 		position: relative;
 		padding: 18px 30px 18px 116px;
+	}
+	.period-filteration {
+		font-size: 16px !important;
+		line-height: 27px;
 	}
 }
 

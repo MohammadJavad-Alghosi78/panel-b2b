@@ -5,17 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <title>پشتیبانی</title>
 </head>
 
@@ -26,23 +27,23 @@
         <img src="./images/setareaval.svg" class="setare-logo">
         <span class="management-panel">پنل مدیریت</span>
       </div>
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/dashboard-icon.svg">
           <span class="item-text">داشبُرد</span>
         </a>
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/Chart-black.svg">
           <span class="item-text">گزارشات</span>
         </a>
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/Discount.svg">
           <span class="item-text">تخفیف‌ها</span>
         </a>
-        <a class="sidebar-items__item active">
+        <a href="#" class="sidebar-items__item active">
           <img class="sidebar-icons active" src="./images/message-question-blue.svg">
           <span class="item-text active-text">پشتیبانی</span>
         </a>
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/code.svg">
           <span class="item-text">مستندات فنی</span>
         </a>
@@ -73,28 +74,28 @@
                 <span>پنل مدیریت</span>
               </div>
             </div>
-            <ul class="menu-links__body">
-              <li class="body__item">
+            <div class="menu-links__body">
+              <a href="#" class="body__item">
                 <img src="./images/dashboard-icon.svg">
                 <span class="responsive-menu-item__title">داشبرد</span>
-              </li>
-              <li class="body__item">
+              </a>
+              <a href="#" class="body__item">
                 <img src="./images/Chart-black.svg">
                 <span class="responsive-menu-item__title">گزارشات</span>
-              </li>
-              <li class="body__item">
+              </a>
+              <a href="#" class="body__item">
                 <img src="./images/Discount.svg">
                 <span class="responsive-menu-item__title">تخفیف‌ها</span>
-              </li>
-              <li class="body__item active-item">
+              </a>
+              <a href="#" class="body__item active-item">
                 <img src="./images/message-question-blue.svg">
                 <span class="responsive-menu-item__title active-title">پشتیبانی</span>
-              </li>
-              <li class="body__item">
+              </a>
+              <a href="#" class="body__item">
                 <img src="./images/code.svg">
                 <span class="responsive-menu-item__title">مستندات فنی</span>
-              </li>
-            </ul>
+              </a>
+            </div>
             <div class="menu-links__footer">
               <div class="credit__person-name">محمدمهدی احمدی</div>
               <div class="credit-section">
@@ -127,9 +128,9 @@
             </div>
           </div>
         </div>
-        <div class="page-header__notification">
+        <!-- <div class="page-header__notification">
           <img src="./images/Notification.svg" class="notification__icon">
-        </div>
+        </div> -->
       </header>
 
 
@@ -138,7 +139,45 @@
       <div class="container-content">
         <!-- ***************************** TICKET SECTION ***************************** -->
         <div class="tab-content show-tab">
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+          <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <div class="modal-header">
+                  <img data-dismiss="modal" src="./images/close-icon.svg" class="modal-close-icon">
+                  <p class="modal-header__modal-title">ثبت تیکت جدید</p>
+                </div>
+                
+                <div class="modal-body">
+                  <div class="modal-body_content">
+                    <div class="ticket-title">
+                      <p class="ticket-subject-hint">لطفا موضوع تیکت خود را وارد کنید</p>
+                      <input type="text" placeholder="موضوع مشکل" class="ticket-subject-input">
+                    </div>
+                    <div class="ticket-description">
+                      <p class="ticket-description__hint">مشکل خود را شرح دهید</p>
+                      <textarea class="ticket-description__textfield" name="ticket-description" cols="30" rows="10"
+                        placeholder="شرح مشکل"></textarea>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="modal-footer">
+                  <div class="modal-footer-content">
+                    <button type="submit" class="footer-button submit-form">تایید</button>
+                    <button class="footer-button close-button" data-dismiss="modal">بستن</button>
+                  </div>
+                  <div class="modal-footer-content-nomobile">
+                    <button type="submit" class="submit-button-nomobile">ثبت تیکت جدید</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-md" role="document">
               <div class="modal-content">
@@ -170,7 +209,92 @@
                 </div>
               </div>
             </div>
+          </div> -->
+
+
+          
+          <!-- SEE MESSAGE DETAILS FAILED -->
+          <div class="modal fade" id="exampleModalCenter-fail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <img data-dismiss="modal" src="./images/close-icon.svg" class="modal-close-icon">
+                  <p class="modal-header__modal-title">جزئیات پیام</p>
+                </div>
+                <div class="modal-body see-datails-modal-body">
+                  <div class="modal-body__first-row">
+                    <div class="modal-body__first-row-item">
+                      <span class="broker-name-text">نام کارگزار</span>
+                      <span class="broker-name-value">شرکت پارسیان پردازش</span>
+                    </div>
+                    <div class="modal-body__first-row-item">
+                      <span class="broker-name-text">عملیات</span>
+                      <span class="broker-name-value danger-see-details">در انتظار بررسی</span>
+                    </div>
+                  </div>
+                  <div class="modal-body__second-row">
+                    <span class="broker-name-value">پیام کارگزار</span>
+                    <span class="broker-name-text">۱۴۰۰/۰۵/۱۰ - ۱۱:۱۰:۰۰</span>
+                  </div>
+                  <div class="message-holder">
+                    دیشابن هتسخ ضرع و مالساب
+                    مدع و تاشرازگ شخب رد هدمآ شیپ تالکشم هب هجوت اب
+                    دنمشهاوخ ۱۴۰۰/۰۶/۱۰ خیرات زا لسکا شرازگ تفایرد
+                    .دیهد ماجنا ار لکشم نیا عفر یارب مزال تامادقا تسا
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          
+          
+          <!-- SEE MESSAGE DETAILS SUCCESS -->
+          <div class="modal fade" id="exampleModalCenter-success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <img data-dismiss="modal" src="./images/close-icon.svg" class="modal-close-icon">
+                  <p class="modal-header__modal-title">جزئیات پیام</p>
+                </div>
+                <div class="modal-body see-datails-modal-body">
+                  <div class="modal-body__first-row">
+                    <div class="modal-body__first-row-item">
+                      <span class="broker-name-text">نام کارگزار</span>
+                      <span class="broker-name-value">شرکت پارسیان پردازش</span>
+                    </div>
+                    <div class="modal-body__first-row-item">
+                      <span class="broker-name-text">عملیات</span>
+                      <span class="broker-name-value sucess-see-details">پاسخ داده شد</span>
+                    </div>
+                  </div>
+                  <div class="modal-body__second-row">
+                    <span class="broker-name-value">پیام کارگزار</span>
+                    <span class="broker-name-text">۱۴۰۰/۰۵/۱۰ - ۱۱:۱۰:۰۰</span>
+                  </div>
+                  <div class="message-holder">
+                    دیشابن هتسخ ضرع و مالساب
+                    مدع و تاشرازگ شخب رد هدمآ شیپ تالکشم هب هجوت اب
+                    دنمشهاوخ ۱۴۰۰/۰۶/۱۰ خیرات زا لسکا شرازگ تفایرد
+                    .دیهد ماجنا ار لکشم نیا عفر یارب مزال تامادقا تسا
+                  </div>
+                  <div class="modal-body__second-row third-row">
+                    <span class="broker-name-value">پاسخ پشتیبانی</span>
+                    <span class="broker-name-text">۱۴۰۰/۰۵/۱۰ - ۱۱:۱۰:۰۰</span>
+                  </div>
+                  <div class="message-holder">
+                    دیشابن هتسخ ضرع و مالساب
+                    مدع و تاشرازگ شخب رد هدمآ شیپ تالکشم هب هجوت اب
+                    دنمشهاوخ ۱۴۰۰/۰۶/۱۰ خیرات زا لسکا شرازگ تفایرد
+                    .دیهد ماجنا ار لکشم نیا عفر یارب مزال تامادقا تسا
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
 
           <div class="filter-section">
             <div class="filter-inputs">
@@ -184,7 +308,7 @@
               <input type="text" placeholder="جستجو" class="search-input">
             </div>
             <div class="action-buttons">
-              <button class="add-ticket-button" data-toggle="modal" data-target="#exampleModal">
+              <button class="add-ticket-button"data-toggle="modal" data-target="#myModal">
                 <img src="./images/add-square.svg" class="ticket-icon">
                 ثبت تیکت جدید
               </button>
@@ -217,7 +341,7 @@
                     <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
                   </td>
                   <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
+                    <button class="see-message-details" type="button" data-toggle="modal" data-target="#exampleModalCenter-fail">
                       <img src="./images/Show.svg" class="see-details-icon">
                       <span>مشاهده</span>
                     </button>
@@ -232,131 +356,7 @@
                     <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
                     <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
                   </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr>
-                <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr>
-                <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr>
-                <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr>
-                <tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr><tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr><tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr><tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
-                    <button class="see-message-details">
-                      <img src="./images/Show.svg" class="see-details-icon">
-                      <span>مشاهده</span>
-                    </button>
-                  </td>
-                </tr><tr class="responsive-table-row responsive-table-row-item">
-                  <td class="responsive-table__table-cell">۲</td>
-                  <td class="responsive-table__table-cell wallet-charge-value">شرکت پارسیان پردازش</td>
-                  <td class="responsive-table__table-cell">عدم نمایش موجودی</td>
-                  <td class="responsive-table__table-cell pend-item done-item">پاسخ داده شده</td>
-                  <td class="responsive-table__table-cell wallet-charge-time-container">
-                    <span class="wallet-charge-date">۱۴۰۰/۰۵/۱۴</span>
-                    <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
-                  </td>
-                  <td class="responsive-table__table-cell">
+                  <td class="responsive-table__table-cell" type="button" data-toggle="modal" data-target="#exampleModalCenter-success">
                     <button class="see-message-details">
                       <img src="./images/Show.svg" class="see-details-icon">
                       <span>مشاهده</span>
