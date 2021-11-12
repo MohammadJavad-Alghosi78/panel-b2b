@@ -19,6 +19,9 @@
 
   <!-- chartjs cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+  <!-- PAGE TITLE -->
   <title>داشبرد</title>
 </head>
 
@@ -127,7 +130,7 @@
           <div class="page-header__timezone">
             <div class="timezone__item">
               <img class="timezone__icon" src="./images/Time Square.svg">
-              <span>۱۰:۵۵:۰۰</span>
+              <span>10:45:00</span>
             </div>
             <div class="timezone__item">
               <img class="timezone__icon" src="./images/Calendar.svg">
@@ -582,6 +585,9 @@
         
   </div>
 
+
+
+  
   <script>
     // VARIABLES
     var resonsiveMenuIcon = document.querySelector('.responsive-menu__icon');
@@ -664,32 +670,60 @@
             font: {
               size: 56
             },
+      // scales: {
+      //       xAxes: [{
+      //           display: true,
+      //           scaleLabel: {
+      //               display: true,
+      //               fontColor:'#000000',
+      //               fontSize:10
+      //           },
+      //           ticks: {
+      //               fontColor: "#C4C4C4",
+      //               fontSize: 14
+      //             }
+      //       }],
+      //       yAxes: [{
+      //           display: true,
+      //           scaleLabel: {
+      //               display: true,
+      //               fontColor: '#000000',
+      //               fontSize:10
+      //           },
+      //           ticks: {
+      //                 fontColor: "#C4C4C4",
+      //                 fontSize: 14
+      //           }
+      //       }]
+      //             },
       scales: {
-            xAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    fontColor:'#000000',
-                    fontSize:10
-                },
-                ticks: {
-                    fontColor: "#C4C4C4",
-                    fontSize: 14
-                  }
-            }],
-            yAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    fontColor: '#000000',
-                    fontSize:10
-                },
-                ticks: {
-                      fontColor: "#C4C4C4",
-                      fontSize: 14
-                }
-            }]
-                  },
+      xAxes: [{
+        display: true,
+        gridLines: {
+          display: false,
+          drawBorder: false,
+        },
+        ticks : {
+          callback: function( label, index, labels ) {
+              return toFarsiNumber(numberWithCommas(label.toString()))
+          }
+        }
+      }],
+      yAxes: [{
+        display: true,
+        gridLines: {
+          display: true,
+          borderDash: [12, 2],
+          drawBorder: false,
+          color: "#F0F0F0",
+        },
+        ticks : {
+          callback: function( label, index, labels ) {
+              return toFarsiNumber(numberWithCommas(label.toString()))
+          }
+          }
+      }]
+    },
       legend: {
           display: false
       },
@@ -708,14 +742,14 @@
   });
 
 
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina","USA","USA","USA","USA",];
+var xValues = ["1400/05/25", "France", "Spain", "USA", "Argentina","USA","USA","USA","USA"];
+var circleChartValues = ['charge', 'internet', 'pin'];
 var yValues = [55, 49, 44, 24, 15];
+var circleChartValues = [60, 15, 25];
 var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
+  "#5D5FEF",
+  "#00C6D2",
+  "#EF5DA8",
 ];
 
 new Chart("myChart", {
@@ -744,9 +778,9 @@ new Chart("myChart-desktop", {
   data: {
     labels: xValues,
     datasets: [{ 
-      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+      data: [4546,1140,1060,1060,1070,1110,1330,2210,7830,2478],
       borderColor: "#44C3CB",
-      fill: false
+      fill: false,
     }, { 
       data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
       borderColor: "#FFBE00",
@@ -758,7 +792,35 @@ new Chart("myChart-desktop", {
     }]
   },
   options: {
-    legend: {display: false}
+    scales: {
+      xAxes: [{
+        display: true,
+        gridLines: {
+          display: false,
+          drawBorder: false,
+        },
+        ticks : {
+          callback: function( label, index, labels ) {
+              return toFarsiNumber(numberWithCommas(label.toString()))
+          }
+        }
+      }],
+      yAxes: [{
+        display: true,
+        gridLines: {
+          display: true,
+          borderDash: [12, 2],
+          drawBorder: false,
+          color: "#F0F0F0",
+        },
+        ticks : {
+          callback: function( label, index, labels ) {
+              return toFarsiNumber(numberWithCommas(label.toString()))
+          }
+          }
+      }]
+    },
+    legend: {display: false},
   }
 });
 
@@ -767,10 +829,10 @@ new Chart("myChart-desktop", {
 new Chart("Doughnut-desktop", {
   type: "doughnut",
   data: {
-    labels: xValues,
+    labels: circleChartValues,
     datasets: [{
       backgroundColor: barColors,
-      data: yValues
+      data: circleChartValues
     }]
   },
   options: {
@@ -785,6 +847,19 @@ new Chart("Doughnut-desktop", {
 });
 
 
+
+
+function toFarsiNumber(n) {
+    const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
+    return n
+        .toString()
+        .replace(/\d/g, x => farsiDigits[x]);
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
   </script>
 </body>
 
