@@ -53,6 +53,19 @@
           <img class="sidebar-icons" src="./images/code.svg">
           <span class="item-text">مستندات فنی</span>
         </a>
+        <a class="sidebar-items__item credit-hover">
+          <img class="sidebar-icons credit-image" src="./images/Activity - benefit.svg">
+          <div class="credit-card">
+            <svg width="130" height="28" viewBox="-50 -50 300 300">
+              <polygon class="triangle" stroke-linejoin="round" points="100,0 0,200 200,200"/>
+            </svg>
+            <span class="credit-value-hover-name">محمدمهدی احمدی</span>
+            <div class="credit-value">
+              <span>اعتبار:</span>
+              <span>۲۳۳۱۲۳۱۳ ریال</span>
+            </div>
+          </div>
+        </a>
       </div>
 
       <div class="personal-details">
@@ -139,12 +152,30 @@
           </div>
         </div>
         <div class="page-header__notification">
-          <div class="choice-period-time">
-            <button class="choice-period-time-button"><img src="./images/calendar-search.svg" width="16" height="16" style="margin-left: 8px;">انتخاب بازه زمانی</button>
+          <div class="choice-period-time" data-target="#choose-time-range" data-toggle="modal" >
+            <button class="choice-period-time-button"><img src="./images/calendar-search.svg" width="16" height="16" style="margin-left: 8px;" data-toggle="modal" data-target="#choose-time-range">انتخاب بازه زمانی</button>
           </div>
         </div>
       </header>
-      
+      <div class="modal fade" id="choose-time-range" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
       <main>
       <!-- choice period of time -->
       

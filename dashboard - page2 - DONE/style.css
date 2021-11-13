@@ -574,6 +574,23 @@ body {
   width: 200px;
 }
 
+.credit-hover {
+	display: flex;
+}
+
+.credit-card {
+  display: none;
+}
+
+
+.credit-image:hover + .credit-card {
+	display: block;
+}
+
+.credit-image:hover + .credit-card {
+	display: block;
+}
+
 .operator-sales-seperate-figure {
   width: 100% !important;
   background: #ffffff;
@@ -922,6 +939,58 @@ main {
   width: 100%;
 }
 
+.credit-card {
+	background-color: #E4EFFF;
+	padding: 16px 12px;
+	position: absolute;
+	right: 90px;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 80px;
+	width: 171px;
+	display: none;
+}
+
+.credit-card > svg {
+	position: absolute;
+	left: 128px;
+	top: 26px;
+}
+
+.triangle {
+	width: 100px;
+	height: 100px;
+	fill: #E4EFFF;
+	stroke: #E4EFFF;
+	stroke-width: 10;
+	transform: rotate(90deg);
+	position: absolute;
+	right: 100px !important;
+}
+
+.credit-value-hover-name {
+	display: block;
+	font-size: 14px;
+	line-height: 24px;
+	color: #130F26;
+	margin-bottom: 12px !important;
+}
+
+.credit-value {
+	width: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.credit-value > * {
+	display: block;
+	color: #130F26;
+}
+
 /* ---------------------------- MEDIA QUIRIES ---------------------------- */
 
 @media (min-width: 992px) {
@@ -1247,6 +1316,9 @@ main {
     padding-left: 10%;
     padding-right: 30px;
   }
+  .credit-hover {
+		display: none !important;
+	}
   .personal-details__credit > * {
     font-size: 12px;
     line-height: 20px;

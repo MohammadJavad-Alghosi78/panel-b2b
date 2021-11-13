@@ -19,6 +19,18 @@
 
   <!-- chartjs cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
+  <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
+
   <title>گزارشات</title>
 </head>
 
@@ -49,6 +61,19 @@
         <a class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/code.svg">
           <span class="item-text">مستندات فنی</span>
+        </a>
+        <a class="sidebar-items__item credit-hover">
+          <img class="sidebar-icons credit-image" src="./images/Activity - benefit.svg">
+          <div class="credit-card">
+            <svg width="130" height="28" viewBox="-50 -50 300 300">
+              <polygon class="triangle" stroke-linejoin="round" points="100,0 0,200 200,200"/>
+            </svg>
+            <span class="credit-value-hover-name">محمدمهدی احمدی</span>
+            <div class="credit-value">
+              <span>اعتبار:</span>
+              <span>۲۳۳۱۲۳۱۳ ریال</span>
+            </div>
+          </div>
         </a>
       </div>
 
@@ -150,13 +175,13 @@
       </div>
       <div class="tabs-mask">
         <div class="tabs">
-          <div onclick="handleChangeTab(this)" data-target="wallet-history" class="tabs__tab">تاریخچه شارژ کیف
+          <div onclick="handleChangeTab(this)" data-target="wallet-history" class="tabs__tab active-tab">تاریخچه شارژ کیف
             پول</div>
             <span class="divider"></span>
           <div onclick="handleChangeTab(this)" data-target="send-money-report" class="tabs__tab">گزارش واریزی</div>
           <span class="divider"></span>
           <div onclick="handleChangeTab(this)" data-target="sale-report" class="tabs__tab">گزارش تجمعی فروش</div><span class="divider"></span>
-          <div onclick="handleChangeTab(this)" data-target="direct-charge-report" class="tabs__tab active-tab last-tab">گزارش شارژ
+          <div onclick="handleChangeTab(this)" data-target="direct-charge-report" class="tabs__tab  last-tab">گزارش شارژ
             مستقیم
           </div>
           
@@ -228,9 +253,12 @@
                     <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
                   </td>
                 </tr>
-
               </tbody>
             </table>
+            <div id="pagination2"></div>
+
+
+
           </div>
         </div>
         <div id="send-money-report" class="tab-content">
@@ -304,17 +332,38 @@
                     <span class="wallet-charge-time">۱۲:۱۰:۰۰</span>
                   </td>
                 </tr>
-
               </tbody>
             </table>
+            <div id="pagination1"></div>
           </div>
         </div>
         <div id="sale-report" class="tab-content">
+          <div class="modal fade" id="choose-time-range" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content date-modal-content">
+                <div class="modal-header-date">
+                  <img src="./images/icon-Mid-Remove.svg" data-dismiss="modal">
+                  <span class="date-modal-text">تقویم</span>
+                </div>
+                <div class="modal-body-date">
+                  <div class="date-modal-inputs">
+                    <input type="text" class="from-date date-modal-input" placeholder="از تاریخ" />
+                    <input class="date-modal-input to-date" placeholder="تا تاریخ">
+                  </div>
+                </div>
+                <div class="modal-footer-date">
+                  <button>تایید</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="benefit-filter-section">
-              <div class="select-time-wrapper">
-                <span class="select-time-wrapper__item"><img class="select-time-wrapper__icon"
-                    src="./images/Calendar.svg"><span class="select-time-wrapper__text">بازه زمانی:</span></span>
-                <span class="select-time-wrapper__item">۱۴۰۰/۰۵/۲۰ - ۱۴۰۰/۰۴/۲۰</span>
+              <div class="select-time-wrapper" data-target="#choose-time-range" data-toggle="modal">
+                <span class="select-time-wrapper__item">
+                  <img class="select-time-wrapper__icon" src="./images/Calendar.svg">
+                    <span class="select-time-wrapper__text">بازه زمانی</span>
+                </span>
             </div>
             <div class="benefit-wrapper">
               <span class="benefit-wrapper__item"><img class="benefit-wrapper__icon"
@@ -739,10 +788,9 @@
           </div>
         </div>
         <div id="direct-charge-report" class="tab-content">
-          <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content remove-border">
+          <div class="modal fade" id="exampleModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
                 <div class="modal-header remove-border">
                   <img src="./images/close-menu.svg" class="close-modal" data-dismiss="modal" width="16" height="16">
                   <span class="modal-title">جستجوی پیشرفته</span>
@@ -764,9 +812,6 @@
                       <option value="">پین</option>
                     </select>
                     <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon">
-
-
-
                     <select
                       name="top-up-type"
                       id="top-up-type"
@@ -801,18 +846,10 @@
                     </select>
                     <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon">
                   </div>
-                  
-
-
-
-
-
-
-
                 </div>
-              </div>
-              <div class="modal-footer remove-border">
-                <button class="search-btn">جستجو</button>
+                <div class="modal-footer remove-border">
+                  <button class="search-btn">جستجو</button>
+                </div>
               </div>
             </div>
           </div>
@@ -820,11 +857,9 @@
             <div class="row">
               <div class="col-sm-3 mt-2">
                 <input type="text" class="advanced-search-input" placeholder="شماره تلفن">
-
               </div>
               <div class="col-sm-3 mt-2">
                 <input type="text" class="advanced-search-input" placeholder="شماره رزرو">
-
               </div>
               <div class="col-sm-3 mt-2">
                 <select
@@ -838,7 +873,6 @@
                       <option value="">پین</option>
                     </select>
                     <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon-no-mobile">
-
               </div>
               <div class="col-sm-3 mt-2">
                 <input type="text" class="advanced-search-input" placeholder="از مبلغ">
@@ -868,11 +902,9 @@
                       <option value="">رایتل</option>
                     </select>
                     <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon-no-mobile">
-
               </div>
               <div class="col-sm-3 mt-2">
                 <input type="text" class="advanced-search-input" placeholder="تا مبلغ">
-
               </div>
               <div class="col-sm-3 mt-2">
                 <select
@@ -886,7 +918,6 @@
                       <option value="">سوم</option>
                     </select>
                     <img src="./images/Arrow - Down 3 select tag.svg" class="expand-select-left-icon-no-mobile">
-
               </div>
               <div class="col-sm-3 mt-2">
 
@@ -958,11 +989,18 @@
               </tbody>
           </table>
         </div>
+        <!-- pagination -->
+        <div id="pagination"></div>
+
+
+
+
+
       </div>
     </div>
   </div>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
     // VARIABLES
     var resonsiveMenuIcon = document.querySelector('.responsive-menu__icon');
@@ -974,6 +1012,18 @@
     var advancedSearchWrapper = document.querySelector('.advanced-search-no-mobile-wrapper');
     var advancedSearchButton = document.querySelector('.advanced-search-button-no-mobile');
     var page = document.querySelector('.container-content');
+    var pageLenData = 12;
+
+
+  $(document).ready(function() {
+  $(".from-date").pDatepicker({
+    initialValueType: "gregorian",
+    format: "YYYY/MM/DD",
+    onSelect: "year"
+    });
+  });
+
+    
 
     // HUMBERGERMENU => SHOW
     function handleShowMenu() {
@@ -987,7 +1037,32 @@
     }
     //  CHANGE TAB AND CONTENT OF PAGE
     function handleChangeTab(element) {
+      // SINA: GET THE DATA AND SET THE LENGTH OF DATA TO PAGE LENDATA VARIABLE
+
+
+      // Paginations
+      var firstTabPagination = document.querySelector('#pagination2');
+      var secondTabPagination = document.querySelector('#pagination1');
+      var thirdTabPagination = document.querySelector('#pagination');
+
+
       var rightElement = element.getAttribute('data-target');
+      if (rightElement === 'wallet-history') {
+        pageLenData = 12;
+        firstTabPagination.style.display = 'flex';
+        secondTabPagination.style.display = 'none';
+        thirdTabPagination.style.display = 'none'
+      } else if (rightElement === 'send-money-report') {
+        pageLenData = 20;
+        firstTabPagination.style.display = 'none';
+        secondTabPagination.style.display = 'flex';
+        thirdTabPagination.style.display = 'none'
+      } else if (rightElement === 'direct-charge-report') {
+        pageLenData = 28;
+        firstTabPagination.style.display = 'none';
+        secondTabPagination.style.display = 'none';
+        thirdTabPagination.style.display = 'flex'
+      }
       for (var index = 0; index < responsiveTabs.length; index++) {
         allContentsOfPage[index].style.display = 'none';
         allTabs[index].classList.remove('active-tab');
@@ -998,6 +1073,9 @@
           responsiveTabs[index].classList.add('active-responsive-tab');
         }
       }
+      var activeTab = document.querySelector('.active-tab');
+      Pagination.Bind()
+      
     }
     // CHOOSE CHECKBOX OF ALL ITEMS IN TABLE
     // function handleSelectAllChecboxItems() {
@@ -1092,6 +1170,253 @@
         }
       }
     });
+
+
+    /* * * * * * * * * * * * * * * * *
+       * Pagination
+       * javascript page navigation
+       * * * * * * * * * * * * * * * * */
+
+       var Pagination = {
+        code: "",
+
+        // --------------------
+        // Utility
+        // --------------------
+
+        // converting initialize data
+        Extend: function (data) {
+          data = data || {};
+          Pagination.size = data.size || 500;
+          Pagination.page = data.page || 10;
+          Pagination.step = data.step || 10;
+        },
+
+        // add pages by number (from [s] to [f])
+        Add: function (s, f) {
+          for (var i = s; i < f; i++) {
+            Pagination.code += "<a>" + i + "</a>";
+          }
+        },
+
+        // add last page with separator
+        Last: function () {
+          Pagination.code += "<i>...</i><a>" + Pagination.size + "</a>";
+        },
+
+        // add first page with separator
+        First: function () {
+          Pagination.code += "<a>1</a><i>...</i>";
+        },
+
+        // --------------------
+        // Handlers
+        // --------------------
+
+        // change page
+        Click: function () {
+          var nav = document.getElementsByTagName("a");
+
+          Pagination.page = +this.innerHTML;
+          Pagination.Start();
+          // if (Pagination.page === 1) {
+          //   // nav[0].classList.add("disabled-icon");
+          //   // nav[pageLenData].childNodes[0].src = "./images/icon-Thin-Next.svg";
+          //   // nav[pageLenData].classList.remove("with-rotate");
+          //   nav[nav.length - 1].childNodes[0].src =
+          //     "./images/icon-Thin-Next-to-left.svg";
+          // } else if (Pagination.page === Pagination.size) {
+          //   // nav[0].classList.remove("disabled-icon");
+          //   nav[0].childNodes[0].src = "./images/icon-Thin-Next-blue.svg";
+          //   nav[Pagination.size - 3].classList.add(
+          //     // "disabled-icon",
+          //     // "with-rotate"
+          //   );
+          //   nav[Pagination.size - 3].childNodes[0].src =
+          //     "./images/icon-Thin-Next-to-left.svg";
+          // } else {
+          //   // nav[0].classList.remove("disabled-icon");
+          //   nav[0].childNodes[0].src = "./images/icon-Thin-Next-blue.svg";
+            
+          //   // nav[nav.length - 1].classList.remove("disabled-icon", "with-rotate");
+          //   nav[nav.length - 1].childNodes[0].src =
+          //     "./images/icon-Thin-Next-to-left.svg";
+          // }
+        },
+
+        // previous page
+        Prev: function () {
+          var nav = document.getElementsByTagName("a");
+          // nav[nav.length - 1].classList.remove("disabled-icon");
+          nav[nav.length - 1].childNodes[0].src =
+            "./images/icon-Thin-Next-blue.svg";
+
+          Pagination.page--;
+          if (Pagination.page < 1) {
+            Pagination.page = 1;
+          }
+          if (Pagination.page === 1) {
+            // nav[0].classList.add("disabled-icon");
+            // nav[0].childNodes[0].src = "./images/";
+          }
+          Pagination.Start();
+        },
+
+        // next page
+        Next: function () {
+          var nav = document.getElementsByTagName("a");
+          // nav[0].classList.remove("disabled-icon");
+          nav[0].childNodes[0].src = "./images/icon-Thin-Next-blue.svg";
+          Pagination.page++;
+          if (Pagination.page > Pagination.size) {
+            Pagination.page = Pagination.size;
+          }
+          if (Pagination.page === Pagination.size) {
+            nav[Pagination.size - 3].classList.add(
+              // "disabled-icon",
+              // "with-rotate"
+            );
+            nav[Pagination.size - 3].childNodes[0].src =
+              "./images/icon-Thin-Next-blue.svg";
+              nav[Pagination.size - 3].childNodes[0].src =
+              "./images/icon-Thin-Next-blue.svg";
+          }
+          Pagination.Start();
+        },
+
+        // --------------------
+        // Script
+        // --------------------
+
+        // binding pages
+        Bind: function () {
+          var allNumberPages = document.getElementsByTagName('a');
+          var activeNumbersPages = document.querySelectorAll('.current');
+          for(var index = 0; index < activeNumbersPages.length; index++) {
+            activeNumbersPages[index].classList = [];
+            if (pageLenData === 12) {
+              console.log(activeNumbersPages)
+              activeNumbersPages[0].classList.add('current')
+              // console.log(activeNumbersPages[index])
+              // activeNumbersPages[index+pageLenData].classList.add('current')
+              console.log('1st tab')
+            } else if (pageLenData === 20) {
+              console.log(activeNumbersPages)
+              console.log('2nd tab')
+            } else if (pageLenData === 28) {
+              console.log(activeNumbersPages)
+              console.log('3rd tab')
+            }
+          }
+          var a = Pagination.e.getElementsByTagName("a");
+          for (var i = 0; i < a.length; i++) {
+            if (+allNumberPages[i+pageLenData].innerHTML === Pagination.page) {
+              allNumberPages[i+pageLenData].className = "current";
+            }
+            a[i].addEventListener("click", Pagination.Click, false);
+          }
+        },
+
+        // write pagination
+        Finish: function () {
+          Pagination.e.innerHTML = Pagination.code;
+          Pagination.code = "";
+          Pagination.Bind();
+        },
+
+        // find pagination type
+        Start: function () {
+          if (Pagination.size < Pagination.step * 2 + 6) {
+            Pagination.Add(1, Pagination.size + 1);
+          } else if (Pagination.page < Pagination.step * 2 + 1) {
+            Pagination.Add(1, Pagination.step * 2 + 4);
+            Pagination.Last();
+          } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+            Pagination.First();
+            Pagination.Add(
+              Pagination.size - Pagination.step * 2 - 2,
+              Pagination.size + 1
+            );
+          } else {
+            Pagination.First();
+            Pagination.Add(
+              Pagination.page - Pagination.step,
+              Pagination.page + Pagination.step + 1
+            );
+            Pagination.Last();
+          }
+          Pagination.Finish();
+        },
+
+        // --------------------
+        // Initialization
+        // --------------------
+
+        // binding buttons
+        Buttons: function (e) {
+          var nav = e.getElementsByTagName("a");
+          nav[0].addEventListener("click", Pagination.Prev, false);
+          nav[1].addEventListener("click", Pagination.Next, false);
+        },
+
+        // create skeleton
+        Create: function (e) {
+          var html = [
+            "<a class='pagination-icons'><img src='./images/icon-Thin-Next.svg'></a>", // previous button   // * TODO: EDIT PREV ICON
+            "<span class='numbers'></span>", // pagination container
+            "<a class='pagination-icons'><img src='./images/icon-Thin-Next-to-left.svg'></a>", // next button // * TODO: EDIT NEXT ICON
+          ];
+
+          e.innerHTML = html.join("");
+          Pagination.e = e.getElementsByTagName("span")[0];
+          Pagination.Buttons(e);
+        },
+
+        // init
+        Init: function (e, data) {
+          Pagination.Extend(data);
+          Pagination.Create(e);
+          Pagination.Start();
+        },
+      };
+
+      /* * * * * * * * * * * * * * * * *
+       * Initialization
+       * * * * * * * * * * * * * * * * */
+
+      var init = function () {
+        Pagination.Init(document.getElementById("pagination"), {
+          size: 10, // pages size
+          page: 1, // selected page
+          step: 1, // pages before and after current
+        });
+        Pagination.Init(document.getElementById("pagination1"), {
+          size: 10, // pages size
+          page: 1, // selected page
+          step: 1, // pages before and after current
+        });
+        Pagination.Init(document.getElementById("pagination2"), {
+          size: 10, // pages size
+          page: 1, // selected page
+          step: 1, // pages before and after current
+        });
+      };
+
+      document.addEventListener("DOMContentLoaded", init, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </script>
 </body>
 

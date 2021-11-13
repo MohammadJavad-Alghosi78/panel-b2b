@@ -1,5 +1,75 @@
 @font-face {font-family: 'IRANSans';src: url(./fonts/IRANSans-2/WebFonts/fonts/eot/IRANSansWeb.eot) format('eot'),url(./fonts/IRANSans-2/WebFonts/fonts/eot/IRANSansWeb_Black.eot) format('eot'),url(./fonts/IRANSans-2/WebFonts/fonts/eot/IRANSansWeb_Bold.eot) format('eot'),url(./fonts/IRANSans-2/WebFonts/fonts/eot/IRANSansWeb_Light.eot) format('eot'),url(./fonts/IRANSans-2/WebFonts/fonts/eot/IRANSansWeb_Medium.eot) format('eot'),url(./fonts/IRANSans-2/WebFonts/fonts/eot/IRANSansWeb_UltraLight.eot) format('eot');src: url(./fonts/IRANSans-2/WebFonts/fonts/ttf/IRANSansWeb.ttf) format('truetype'),url(./fonts/IRANSans-2/WebFonts/fonts/ttf/IRANSansWeb_Black.ttf) format('truetype'),url(./fonts/IRANSans-2/WebFonts/fonts/ttf/IRANSansWeb_Bold.ttf) format('truetype'),url(./fonts/IRANSans-2/WebFonts/fonts/ttf/IRANSansWeb_Light.ttf) format('truetype'),url(./fonts/IRANSans-2/WebFonts/fonts/ttf/IRANSansWeb_Medium.ttf) format('truetype'),url(./fonts/IRANSans-2/WebFonts/fonts/ttf/IRANSansWeb_UltraLight.ttf) format('truetype');src: url(./fonts/IRANSans-2/WebFonts/fonts/woff/IRANSansWeb.woff) format('woff'),url(./fonts/IRANSans-2/WebFonts/fonts/woff/IRANSansWeb_Black.woff) format('woff'),url(./fonts/IRANSans-2/WebFonts/fonts/woff/IRANSansWeb_Bold.woff) format('woff'),url(./fonts/IRANSans-2/WebFonts/fonts/woff/IRANSansWeb_Light.woff) format('woff'),url(./fonts/IRANSans-2/WebFonts/fonts/woff/IRANSansWeb_Medium.woff) format('woff'),url(./fonts/IRANSans-2/WebFonts/fonts/woff/IRANSansWeb_UltraLight.woff) format('woff');src: url(./fonts/IRANSans-2/WebFonts/fonts/woff2/IRANSansWeb.woff2) format('woff2'),url(./fonts/IRANSans-2/WebFonts/fonts/woff2/IRANSansWeb_Black.woff2) format('woff2'),url(./fonts/IRANSans-2/WebFonts/fonts/woff2/IRANSansWeb_Bold.woff2) format('woff2'),url(./fonts/IRANSans-2/WebFonts/fonts/woff2/IRANSansWeb_Light.woff2) format('woff2'),url(./fonts/IRANSans-2/WebFonts/fonts/woff2/IRANSansWeb_Medium.woff2) format('woff2'),url(./fonts/IRANSans-2/WebFonts/fonts/woff2/IRANSansWeb_UltraLight.woff2) format('woff2');}*{font-family: 'IRANSans';}
 
+:root {
+  --blue: #007BFF;
+  --white: #FFFFFF;
+  --gray: #F8F8FA;
+  --dark-gray: #A4AEB3;
+}
+
+
+#pagination, #pagination1, #pagination2 {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#pagination a, #pagination i, #pagination1 a, #pagination1 i, #pagination2 a, #pagination2 i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  width: 32px !important;
+  margin-right: 4px;
+  height: 32px;
+  border-radius: 10px;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+      -ms-user-select:none;
+       -o-user-select:none;
+          user-select:none;
+}
+
+a {
+	color: black !important;
+}
+
+.current {
+	color: white !important;
+}
+
+#pagination a, #pagination1 a, #pagination2 a {
+  border: none;
+  cursor: pointer;
+  background-color: var(--white);
+}
+#pagination a.disabled-icon, #pagination1 a.disabled-icon, #pagination2 a.disabled-icon {
+  background-color: var(--dark-gray);
+}
+.numbers {
+  display: flex;
+}
+#pagination a.current, #pagination1 a.current, #pagination2 a.current {
+  background-color: var(--blue);
+  color: white;
+}
+.disabled-icon {
+  cursor: not-allowed;
+  background-color: var(--dark-gray);
+}
+.with-rotate {
+  transform: rotate(0);
+}
+
+@media (min-width: 768px) {
+  #pagination a, #pagination i, #pagination1 a, #pagination1 i, #pagination2 a, #pagination2 i {
+    font-size: 16px;
+    width: 40px !important;
+    height: 40px;
+    border-radius: 15px;
+  }
+}
+
 html, body {
 	padding: 0;
 	margin: 0;
@@ -74,6 +144,10 @@ html, body {
 .sidebar-active-item {
 	background: #E4EFFF;
 	border-radius: 10px;
+}
+
+.credit-hover {
+	display: flex;
 }
 
 .personal-details {
@@ -806,6 +880,10 @@ canvas {
 	display: none;
 }
 
+.credit-image:hover + .credit-card {
+	display: block;
+}
+
 .row-of-all-reports-tab__operators-full-report {
 	/* width: 54%; */
 	background-color: #FFFFFF;
@@ -874,6 +952,63 @@ canvas {
 	padding: 16px 0 !important;
 	margin: 0 auto;
 }
+
+.modal-header-date, .modal-body-date, .modal-footer-date {
+	border: none;
+}
+
+.date-modal-content {
+	padding: 20px;
+}
+
+.modal-header-date {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.modal-header-date > img {
+	cursor: pointer;
+}
+
+.date-modal-text {
+	font-size: 18px;
+	line-height: 25px;
+	color: black;
+	margin: 0 auto;
+}
+
+.modal-body-date {
+	margin-top: 45px;
+}
+
+.date-modal-inputs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.date-modal-input {
+	background: #F9F9F9;
+	border-radius: 15px;
+	border: none;
+	padding: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .modal-title {
 	font-size: 12px;
@@ -1138,10 +1273,6 @@ input:focus {
 	border-radius: 10px;
 }
 
-.advanced-search-submit-button {
-
-}
-
 .expand-select-left-icon-no-mobile {
 	position: absolute;
 	top: 13px;
@@ -1159,9 +1290,7 @@ input:focus {
 	border-radius: 15px !important;
 }
 
-select option[selected]{
-	/* background-color: red !important; */
-}
+
 
 .sumbit-advanced-search-button {
 	font-size: 20px;
@@ -1262,6 +1391,59 @@ select option[selected]{
 .benefit-filter-section {
 	margin-top: 12px;
 }
+
+.credit-card {
+	background-color: #E4EFFF;
+	padding: 16px 12px;
+	position: absolute;
+	right: 90px;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 80px;
+	width: 171px;
+	display: none;
+}
+
+.credit-card > svg {
+	position: absolute;
+	left: 128px;
+	top: 26px;
+}
+
+.triangle {
+	width: 100px;
+	height: 100px;
+	fill: #E4EFFF;
+	stroke: #E4EFFF;
+	stroke-width: 10;
+	transform: rotate(90deg);
+	position: absolute;
+	right: 100px !important;
+}
+
+.credit-value-hover-name {
+	display: block;
+	font-size: 14px;
+	line-height: 24px;
+	color: #130F26;
+	margin-bottom: 12px !important;
+}
+
+.credit-value {
+	width: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.credit-value > * {
+	display: block;
+	color: #130F26;
+}
+
 
 
 /* ---------------------------- 320 PX ------------------------- */
@@ -1364,7 +1546,7 @@ select option[selected]{
 		display: flex;
 	}
 	.wallet-charge-date::after {
-		content: '-';
+		content: '';
 		margin: 4px;
 	}
 	.filter-section {
@@ -1479,6 +1661,7 @@ select option[selected]{
 		margin-bottom: 0;
 		width: 336px;
 		margin-right: auto;
+		cursor: pointer;
 	}
 	.chart-legend__operator {
 		font-size: 14px;
@@ -1533,6 +1716,9 @@ select option[selected]{
 @media (min-width: 1366px) {
 	.sidebar {
 		width: 15%;
+	}
+	.credit-hover {
+		display: none;
 	}
 	.management-panel {
 		display: block;

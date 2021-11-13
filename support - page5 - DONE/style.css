@@ -55,6 +55,10 @@ html, body {
 	height: 20px;
 }
 
+.credit-hover {
+	display: flex;
+}
+
 .message-holder {
 	/* margin-top: 12px; */
 	border: 1px solid #C4C4C4;
@@ -439,7 +443,7 @@ html, body {
 	padding: 6px 10px;
 	border: 0;
 	color: #FFFFFF;
-	background: #57BE6C;
+	background: #3AA65E;
 	box-shadow: 0px 0px 10px rgba(87, 190, 108, 0.05);
 	border-radius: 5px;
 	font-size: 12px;
@@ -754,6 +758,63 @@ select.advanced-search-dropdown {
 	margin-left: 32px;
 }
 
+.credit-image:hover + .credit-card {
+	display: block;
+}
+
+.credit-card {
+	background-color: #E4EFFF;
+	padding: 16px 12px;
+	position: absolute;
+	right: 90px;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 80px;
+	width: 171px;
+	display: none;
+}
+
+.credit-card > svg {
+	position: absolute;
+	left: 128px;
+	top: 26px;
+}
+
+.triangle {
+	width: 100px;
+	height: 100px;
+	fill: #E4EFFF;
+	stroke: #E4EFFF;
+	stroke-width: 10;
+	transform: rotate(90deg);
+	position: absolute;
+	right: 100px !important;
+}
+
+.credit-value-hover-name {
+	display: block;
+	font-size: 14px;
+	line-height: 24px;
+	color: #130F26;
+	margin-bottom: 12px !important;
+}
+
+.credit-value {
+	width: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.credit-value > * {
+	display: block;
+	color: #130F26;
+}
+
+
 /* ---------------------------- 320 PX ------------------------- */
 @media (min-width: 320px) {
 	.sidebar {
@@ -983,6 +1044,9 @@ select.advanced-search-dropdown {
 	.sidebar {
 		width: 15%;
 		padding: 16px;
+	}
+	.credit-hover {
+		display: none;
 	}
 	.management-panel {
 		display: block;
