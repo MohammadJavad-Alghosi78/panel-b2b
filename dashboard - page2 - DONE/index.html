@@ -20,6 +20,14 @@
   <!-- chartjs cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
+  <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
+
 
   <!-- PAGE TITLE -->
   <title>داشبرد</title>
@@ -152,25 +160,41 @@
           </div>
         </div>
         <div class="page-header__notification">
-          <div class="choice-period-time" data-target="#choose-time-range" data-toggle="modal" >
-            <button class="choice-period-time-button"><img src="./images/calendar-search.svg" width="16" height="16" style="margin-left: 8px;" data-toggle="modal" data-target="#choose-time-range">انتخاب بازه زمانی</button>
+          <div class="choice-period-time">
+            <button class="choice-period-time-button" data-toggle="modal" data-target="#choose-time-range">انتخاب بازه زمانی</button>
           </div>
         </div>
       </header>
       <div class="modal fade" id="choose-time-range" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
-        
           <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Header</h4>
+          <div class="modal-content date-modal-content">
+            <div class="modal-header-date">
+              <img src="./images/icon-Mid-Remove.svg" data-dismiss="modal">
+              <span class="date-modal-text">تقویم</span>
             </div>
-            <div class="modal-body">
-              <p>Some text in the modal.</p>
+            <div class="modal-body-date">
+              <div class="hint-date-text">
+                ابتدا بازه زمانی خود را مشخص کنید
+              </div>
+              <div class="date-modal-inputs">
+                <div class="date-picker-wrapper">
+                  <img src="./images/from-date.svg" class="date-icon from-icon" width="24" height="24">
+                  <input id="from-date-alt" class="date-input" placeholder="از تاریخ" />
+                  <img src="./images/to-date.svg" class="date-icon to-date-icon" width="24" height="24">
+                  <input id="to-date-alt" class="date-input" placeholder="تا تاریخ" />
+                </div>
+                <div class="datepickers-wrapper">
+                  <div class="from-date"></div>
+                  <div class="to-date"></div>
+                </div>
+              </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-footer-date">
+              <span class="from-to-date-hint-text">
+                <img src="./images/Danger.svg" class="from-to-date-hint-icon">
+                ابتدا و انتهای بازه زمانی را انتخاب کنید</span>
+              <button class="submit-time-step disable-submit" onclick="handleSubmitDates()">تایید</button>
             </div>
           </div>
           
@@ -181,8 +205,10 @@
       
       
       <!-- operators -->
+      <div class="choose-date-btn-responsive-wrapper" data-toggle="modal" data-target="#choose-time-range">
+        <button class="choose-date-btn-responsive"><img src="./images/calendar-search.svg" width="16" height="16" style="margin-left: 8px;">انتخاب بازه زمانی</button>
+      </div>
       <div class="operators-wrapper">
-        
         
         <div class="operator">
           <div class="operator-header">
@@ -631,6 +657,60 @@
     var advancedSearchButton = document.querySelector('.advanced-search-button-no-mobile');
     var page = document.querySelector('.container-content');
     var operatorTabs = document.querySelectorAll('.operator-sale__operator-name');
+    var fromDateInput = document.querySelector('#from-date-alt');
+    var fromDateDatepicker = document.querySelector('.from-date');
+    var toDateInput = document.querySelector('#to-date-alt');
+    var toDateDatepicker = document.querySelector('.to-date');
+    var hintText = document.querySelector('.from-to-date-hint-text');
+    
+    
+
+    fromDateInput.addEventListener('click', function() {
+      toDateDatepicker.style.opacity = "0";
+      toDateDatepicker.style.zIndex = "-1";
+      toDateInput.style.border = "none";
+      fromDateDatepicker.style.opacity = '1';
+      fromDateInput.style.border = '2px solid #007BFF';
+    })
+
+    toDateInput.addEventListener('click', function() {
+      toDateDatepicker.style.opacity = "1";
+      toDateDatepicker.style.zIndex = "12";
+      toDateInput.style.border = "2px solid #007BFF";
+      fromDateDatepicker.style.opacity = '0';
+      fromDateDatepicker.style.transform = '100px';
+      fromDateInput.style.border = 'none';
+    })
+    
+    
+    function handleSubmitDates() {
+      console.log(fromDateInput.value, toDateInput.value)
+      if (fromDateInput.value === '' || toDateInput.value === '') {
+        hintText.style.display = 'flex'
+      } else {
+        console.log('Submit form')
+      }
+    }
+    
+    $(document).ready(function() {
+      $('.to-date').persianDatepicker({
+        observer: true,
+        inline: true,
+        altField: '#to-date-alt',
+        format: 'YYYY/MM/DD',
+        altFormat: 'l',
+        initialValue: false,
+      });
+      $('.from-date').persianDatepicker({
+        observer: true,
+        inline: true,
+        altField: '#from-date-alt',
+        format: 'YYYY/MM/DD',
+        altFormat: 'l',
+        initialValue: false,
+      });
+    });
+
 
     // HUMBERGERMENU => SHOW
     function handleShowMenu() {
@@ -639,7 +719,6 @@
     }
     // HUMBERGERMENU =? HIDE
     function handleHideMenu() {
-      console.log('hlsajdflijlk')
       resonsiveMenu.style.display = 'none';
       document.getElementsByTagName('main')[0].style.display = 'block';
     }

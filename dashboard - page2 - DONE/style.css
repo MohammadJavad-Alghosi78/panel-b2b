@@ -419,6 +419,321 @@ body {
   color: #27ae60;
 }
 
+
+
+.modal-header-date, .modal-body-date, .modal-footer-date {
+	border: none;
+}
+
+.modal-footer-date {
+	margin-top: 12px;
+	text-align: center;
+}
+
+#plotId {
+	border: none;
+	padding: 12px;
+}
+
+
+td.today span {
+	background-color: white !important;
+	border: 0.5px solid #007BFF !important;
+	color: #007BFF !important;
+}
+
+td span:hover {
+	background-color: #007BFF !important;
+	color: white !important;
+} 
+
+td.selected span {
+	background-color: #007BFF !important;
+	color: white !important;
+}
+
+.toolbox {
+	display: none !important;
+}
+
+.from-to-date-hint-text {
+	display: none;
+	color: #E54660;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 8px;
+	/* display: flex; */
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.from-to-date-hint-icon {
+	margin-left: 4px;
+}
+
+.table-days span {
+	background: #FFFFFF !important;
+	border: 0.5px solid #D6D6D6 !important;
+	box-sizing: border-box !important;
+	border-radius: 15px !important;
+	margin: 2px 0 !important;
+	width: 40px !important;
+	height: 40px !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	margin: 4px auto !important;
+}
+
+.header-row-cell {
+	color: #007BFF !important;
+}
+
+.datepicker-plot-area {
+	font-size: 14px !important;
+}
+
+.submit-time-step {
+	width: 100%;
+	background: #007BFF;
+	border-radius: 15px;
+	padding: 12px;
+	text-align: center;
+	border: none;
+	color: white;
+}
+
+
+.hint-date-text {
+	text-align: center;
+	margin-bottom: 8px;
+	text-align: center;
+	color: #7A7A7A;
+	text-align: center;
+	width: 100%;
+}
+
+.date-modal-content {
+	padding: 20px;
+	height: 730px;
+}
+
+.date-input {
+	padding: 16px 42px 16px 0;
+	border: none;
+	border-radius: 15px;
+	background: #F9F9F9;
+	margin-bottom: 8px;
+}
+
+.date-picker-wrapper {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	margin: 0 2px;
+}
+
+.modal-header-date {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.modal-header-date > img {
+	cursor: pointer;
+}
+
+.date-modal-text {
+	font-size: 18px;
+	line-height: 25px;
+	color: black;
+	margin: 0 auto 0 46%;
+}
+
+.modal-body-date {
+	margin-top: 24px;
+	position: relative;
+}
+
+.datepicker-plot-area {
+	box-shadow: none !important;
+}
+
+.date-modal-inputs {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.date-modal-input {
+	background: #F9F9F9;
+	border-radius: 15px;
+	border: none;
+	padding: 16px;
+}
+
+.datepicker-time-view {
+	display: none !important;
+}
+
+.datepickers-wrapper {
+	width: 100%;
+	position: relative;
+}
+
+.pwt-btn-prev, .pwt-btn-next {
+	transform: rotate(180deg);
+}
+
+.from-date {
+	transition: all 0.5s;
+}
+
+.to-date {
+	transition: all 0.5s;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -12;
+}
+
+#from-date-alt {
+	border: 2px solid #007BFF;
+}
+
+
+.choose-date-btn-responsive-wrapper {
+  width: 117px;
+  display: flex;
+  justify-content: flex-start;
+}
+.choose-date-btn-responsive {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 12px;
+  border: none;
+  padding: 8px 12px;
+  font-size: 10px;
+  line-height: 17px;
+  width: 117px;
+  text-align: right;
+}
+
+.from-icon, .to-date-icon {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.date-input {
+	padding: 16px 42px 16px 0;
+	border: none;
+	border-radius: 15px;
+	background: #F9F9F9;
+	margin-bottom: 8px;
+}
+.datepickers-wrapper {
+	width: 100%;
+	position: relative;
+}
+.from-date {
+	transition: all 0.5s;
+}
+.to-date {
+	transition: all 0.5s;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -12;
+}
+.modal-footer-date {
+	margin-top: 12px;
+	text-align: center;
+}
+
+.from-to-date-hint-text {
+	display: none;
+	color: #E54660;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 8px;
+	/* display: flex; */
+	justify-content: flex-start;
+	align-items: center;
+}
+.from-to-date-hint-icon {
+	margin-left: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .timezone__icon {
   width: 24px;
   height: 24px;
@@ -953,6 +1268,16 @@ main {
 	display: none;
 }
 
+.submit-time-step {
+	width: 100%;
+	background: #007BFF;
+	border-radius: 15px;
+	padding: 12px;
+	text-align: center;
+	border: none;
+	color: white;
+}
+
 .credit-card > svg {
 	position: absolute;
 	left: 128px;
@@ -1015,6 +1340,7 @@ main {
   }
 }
 
+/* ---------------------------- 566px ---------------------------- */
 @media (min-width: 576px) {
   .information-container-desktop {
     display: none;
@@ -1025,6 +1351,17 @@ main {
   }
   .row-of-all-reports-tab {
     display: none;
+  }
+  .date-icon {
+		position: absolute;
+		top: 14px;
+		right: 16px;
+	}
+	.to-date-icon {
+		right: calc(50% + 16px) !important;
+	}
+  .date-modal-content {
+    height: 670px;
   }
 }
 /* ---------------------------- 768 PX ------------------------- */

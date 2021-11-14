@@ -42,27 +42,27 @@
         <span class="management-panel">پنل مدیریت</span>
       </div>
       <div class="sidebar__items">
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/dashboard-icon.svg">
           <span class="item-text">داشبُرد</span>
         </a>
-        <a class="sidebar-items__item active">
+        <a href="#" class="sidebar-items__item active">
           <img class="sidebar-icons active" src="./images/report.svg">
           <span class="item-text active-item-text">گزارشات</span>
         </a>
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/Discount.svg">
           <span class="item-text">تخفیف‌ها</span>
         </a>
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/message-question.svg">
           <span class="item-text">پشتیبانی</span>
         </a>
-        <a class="sidebar-items__item">
+        <a href="#" class="sidebar-items__item">
           <img class="sidebar-icons" src="./images/code.svg">
           <span class="item-text">مستندات فنی</span>
         </a>
-        <a class="sidebar-items__item credit-hover">
+        <a href="#" class="sidebar-items__item credit-hover">
           <img class="sidebar-icons credit-image" src="./images/Activity - benefit.svg">
           <div class="credit-card">
             <svg width="130" height="28" viewBox="-50 -50 300 300">
@@ -347,13 +347,27 @@
                   <span class="date-modal-text">تقویم</span>
                 </div>
                 <div class="modal-body-date">
+                  <div class="hint-date-text">
+                    ابتدا بازه زمانی خود را مشخص کنید
+                  </div>
                   <div class="date-modal-inputs">
-                    <input type="text" class="from-date date-modal-input" placeholder="از تاریخ" />
-                    <input class="date-modal-input to-date" placeholder="تا تاریخ">
+                    <div class="date-picker-wrapper">
+                      <img src="./images/from-date.svg" class="date-icon from-icon" width="24" height="24">
+                      <input id="from-date-alt" class="date-input" placeholder="از تاریخ" />
+                      <img src="./images/to-date.svg" class="date-icon to-date-icon" width="24" height="24">
+                      <input id="to-date-alt" class="date-input" placeholder="تا تاریخ" />
+                    </div>
+                    <div class="datepickers-wrapper">
+                      <div class="from-date"></div>
+                      <div class="to-date"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="modal-footer-date">
-                  <button>تایید</button>
+                  <span class="from-to-date-hint-text">
+                    <img src="./images/Danger.svg" class="from-to-date-hint-icon">
+                    ابتدا و انتهای بازه زمانی را انتخاب کنید</span>
+                  <button class="submit-time-step disable-submit" onclick="handleSubmitDates()">تایید</button>
                 </div>
               </div>
             </div>
@@ -362,7 +376,7 @@
               <div class="select-time-wrapper" data-target="#choose-time-range" data-toggle="modal">
                 <span class="select-time-wrapper__item">
                   <img class="select-time-wrapper__icon" src="./images/Calendar.svg">
-                    <span class="select-time-wrapper__text">بازه زمانی</span>
+                    <span class="select-time-wrapper__text">انتخاب بازه زمانی</span>
                 </span>
             </div>
             <div class="benefit-wrapper">
@@ -829,8 +843,8 @@
                     <input type="text" placeholder="تا مبلغ"  class="search-inputs left-input">
                   </div>
                   <div class="modal-body-row">
-                    <input type="text" placeholder="از تاریخ" class="search-inputs right-input">
-                    <input type="text" placeholder="تا تاریخ"  class="search-inputs left-input">
+                    <input type="text" placeholder="از تاریخ" class="search-inputs right-input from-date-in-advanced-search-modal">
+                    <input type="text" placeholder="تا تاریخ"  class="search-inputs left-input to-date-in-advanced-search-modal">
                   </div>
                   <div class="modal-body-row">
                     <input type="text" placeholder="شماره مرجع اپراتور" class="search-inputs right-input">
@@ -879,11 +893,11 @@
 
               </div>
               <div class="col-sm-3 mt-2">
-                <input type="text" class="advanced-search-input" placeholder="از تاریخ">
+                <input type="text" class="advanced-search-input from-date-advanced-search-desktop" placeholder="از تاریخ">
 
               </div>
               <div class="col-sm-3 mt-2">
-                <input type="text" class="advanced-search-input" placeholder="تا تاریخ">
+                <input type="text" class="advanced-search-input to-date-advanced-search-desktop" placeholder="تا تاریخ">
 
               </div>
               <div class="col-sm-3 mt-2">
@@ -1013,15 +1027,81 @@
     var advancedSearchButton = document.querySelector('.advanced-search-button-no-mobile');
     var page = document.querySelector('.container-content');
     var pageLenData = 12;
+    var fromDateInput = document.querySelector('#from-date-alt');
+    var fromDateDatepicker = document.querySelector('.from-date');
+    var toDateInput = document.querySelector('#to-date-alt');
+    var toDateDatepicker = document.querySelector('.to-date');
+    var hintText = document.querySelector('.from-to-date-hint-text');
 
+    var fromDateDirectChargeDesktop = document.querySelector('.from-date-advanced-search-desktop');
+    
+    
 
-  $(document).ready(function() {
-  $(".from-date").pDatepicker({
-    initialValueType: "gregorian",
-    format: "YYYY/MM/DD",
-    onSelect: "year"
+    fromDateInput.addEventListener('click', function() {
+      toDateDatepicker.style.opacity = "0";
+      toDateDatepicker.style.zIndex = "-1";
+      toDateInput.style.border = "none";
+      fromDateDatepicker.style.opacity = '1';
+      fromDateInput.style.border = '2px solid #007BFF';
+    })
+
+    toDateInput.addEventListener('click', function() {
+      toDateDatepicker.style.opacity = "1";
+      toDateDatepicker.style.zIndex = "12";
+      toDateInput.style.border = "2px solid #007BFF";
+      fromDateDatepicker.style.opacity = '0';
+      fromDateDatepicker.style.transform = '100px';
+      fromDateInput.style.border = 'none';
+    })
+    
+    
+    function handleSubmitDates() {
+      console.log(fromDateInput.value, toDateInput.value)
+      if (fromDateInput.value === '' || toDateInput.value === '') {
+        hintText.style.display = 'flex'
+      } else {
+        console.log('Submit form')
+      }
+    }
+    
+    $(document).ready(function() {
+      $('.to-date').persianDatepicker({
+        observer: true,
+        inline: true,
+        altField: '#to-date-alt',
+        format: 'YYYY/MM/DD',
+        altFormat: 'l',
+        initialValue: false,
+      });
+      $('.from-date').persianDatepicker({
+        observer: true,
+        inline: true,
+        altField: '#from-date-alt',
+        format: 'YYYY/MM/DD',
+        altFormat: 'l',
+        initialValue: false,
+      });
+      $('.from-date-advanced-search-desktop').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        initialValue: false,
+        autoClose: true
+      });
+      $('.to-date-advanced-search-desktop').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        initialValue: false,
+        autoClose: true
+      });
+      $('.from-date-in-advanced-search-modal').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        initialValue: false,
+        autoClose: true
+      });
+      $('.to-date-in-advanced-search-modal').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        initialValue: false,
+        autoClose: true
+      });
     });
-  });
 
     
 
@@ -1295,10 +1375,7 @@
           for(var index = 0; index < activeNumbersPages.length; index++) {
             activeNumbersPages[index].classList = [];
             if (pageLenData === 12) {
-              console.log(activeNumbersPages)
               activeNumbersPages[0].classList.add('current')
-              // console.log(activeNumbersPages[index])
-              // activeNumbersPages[index+pageLenData].classList.add('current')
               console.log('1st tab')
             } else if (pageLenData === 20) {
               console.log(activeNumbersPages)
