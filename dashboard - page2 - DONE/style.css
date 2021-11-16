@@ -1645,6 +1645,9 @@ main {
   .expand-select-left-icon-no-mobile {
     top: 11px;
   }
+  .choose-date-btn-responsive {
+    display: none !important;
+  }
 }
 
 /* ---------------------------- 1366 PX ---------------------------- */
