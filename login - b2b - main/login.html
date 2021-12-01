@@ -1,102 +1,248 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>ورود</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./style.css">
-  <title>ورود</title>
-</head>
+  <body>
+    <div class="mobile-container">
+      <!-- LOGO -->
+      <div class="logo">
+        <img src="./images/setareaval.svg" alt="setareaval logo" />
+      </div>
 
-<body>
+      <div id="login-form-mobile" class="login-form">
+        <h1 class="login-form__title">ورود به پنل</h1>
 
-  <div class="mobile-container">
-    <!-- LOGO -->
-    <div class="logo">
-      <img src="./images/setareaval.svg" alt="setareaval logo">
-    </div>
-
-    <div class="login-form">
-
-      <h1 class="login-form__title">ورود به پنل</h1>
-
-      <div class="login-form__form">
-
-        <div class="form-item">
-          <!-- EMAIL SECTION -->
-          <label for="email-input" class="login-form__label">لطفا ایمیل خود را وارد کنید</label>
-          <img src="./images/Profile.svg" class="form-item__icon" alt="">
-          <input type="email" id="email-input" name="email" placeholder="پست الکترونیکی" class="login-form__input">
-        </div>
-
-        <div class="form-item">
-          <!-- PASSWORD SECTION -->
-          <label for="password-input" class="login-form__label">رمز عبور خود را وارد کنید</label>
-          <img src="./images/Password.svg" class="form-item__icon" alt="">
-          <input type="password" id="password-input" name="password" placeholder="رمز عبور" class="login-form__input">
-        </div>
-
-        <div class="form-item">
-          <!-- SECURITY CODE -->
-          <img src="./images/Shield Done.png" class="form-item-security-icon" alt="">
-          <label for="security-code-input" class="form-item__security-message">عبارت داخل کادر را وارد کنید</label>
-          <div class="security-section">
-            <input style="width: 80%" type="text" placeholder="کد امنیتی" class="security-section__security-code-input">
-            <img id="security-img" style="width: 100%; height: 40px;" src="./images/validation-code.jpg" class="security-code-img">
+        <div class="login-form__form">
+          <div class="form-item">
+            <!-- EMAIL SECTION -->
+            <label for="email-input" class="login-form__label"
+              >لطفا ایمیل خود را وارد کنید</label
+            >
+            <img src="./images/Profile.svg" class="form-item__icon" alt="" />
+            <input
+              type="email"
+              id="email-input"
+              name="email"
+              placeholder="پست الکترونیکی"
+              class="login-form__input"
+            />
           </div>
+
+          <div class="form-item">
+            <!-- PASSWORD SECTION -->
+            <label for="password-input" class="login-form__label"
+              >رمز عبور خود را وارد کنید</label
+            >
+            <img src="./images/Password.svg" class="form-item__icon" alt="" />
+            <input
+              type="password"
+              id="password-input"
+              name="password"
+              placeholder="رمز عبور"
+              class="login-form__input"
+            />
+          </div>
+
+          <div class="form-item">
+            <!-- SECURITY CODE -->
+            <img
+              src="./images/Shield Done.png"
+              class="form-item-security-icon"
+              alt=""
+            />
+            <label for="security-code-input" class="form-item__security-message"
+              >عبارت داخل کادر را وارد کنید</label
+            >
+            <div class="security-section">
+              <input
+                style="width: 80%"
+                type="text"
+                placeholder="کد امنیتی"
+                class="security-section__security-code-input"
+              />
+              <img
+                id="security-img"
+                style="width: 50%; height: 40px"
+                src="./images/validation-code.jpg"
+                class="security-code-img"
+              />
+            </div>
+          </div>
+          <a href="#">
+            <button class="login-form__submit" onclick="handleOTP()">
+              ارسال کد
+            </button>
+          </a>
         </div>
-        <a href="../dashboard - page2 - DONE/index.html">
-          <button class="login-form__submit">ورود</button>
-        </a>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="form-section">
-      <div class="form-section__content">
-        <div class="logo">
-          <img src="./images/setareaval.svg" class="logo__xl" alt="">
-        </div>
-        <div class="login-form">
-          <h1 class="login-form__title">ورود به پنل</h1>
-          <div class="login-form__form">
-            <div class="form-item">
-              <!-- EMAIL SECTION -->
-              <label for="email-input" class="form-item__label">لطفا ایمیل خود را وارد کنید</label>
-              <img src="./images/Profile.svg" class="form-item__icon" alt="">
-              <input type="email" id="email-input" name="email" placeholder="پست الکترونیکی" class="form-item__input">
-            </div>
-
-            <div class="form-item">
-              <!-- PASSWORD SECTION -->
-              <label for="password-input" class="form-item__label">رمز عبور خود را وارد کنید</label>
-              <img src="./images/Password.svg" class="form-item__icon" alt="">
-              <input type="password" id="password-input" name="password" placeholder="رمز عبور"
-                class="form-item__input">
-            </div>
-
-            <div class="form-item">
-              <!-- SECURITY CODE -->
-              <img src="./images/Shield Done.png" class="form-item-security-icon" alt="">
-              <label for="security-code-input" class="form-item__security-message">عبارت داخل کادر را وارد کنید</label>
-              <div class="security-section">
-                <input style="width: 80%" type="text" placeholder="کد امنیتی" class="security-section__security-code-input">
-                <img id="security-img" style="width: 50%" src="./images/validation-code.jpg" class="security-code-img">
+    <div class="container">
+      <div class="form-section">
+        <div class="form-section__content">
+          <div class="logo">
+            <img src="./images/setareaval.svg" class="logo__xl" alt="" />
+          </div>
+          <div class="login-form" id="login-form-desktop">
+            <h1 class="login-form__title">ورود به پنل</h1>
+            <div class="login-form__form">
+              <div class="form-item">
+                <!-- EMAIL SECTION -->
+                <label for="email-input" class="form-item__label"
+                  >لطفا ایمیل خود را وارد کنید</label
+                >
+                <img
+                  src="./images/Profile.svg"
+                  class="form-item__icon"
+                  alt=""
+                />
+                <input
+                  type="email"
+                  id="email-input"
+                  name="email"
+                  placeholder="پست الکترونیکی"
+                  class="form-item__input"
+                />
               </div>
+
+              <div class="form-item">
+                <!-- PASSWORD SECTION -->
+                <label for="password-input" class="form-item__label"
+                  >رمز عبور خود را وارد کنید</label
+                >
+                <img
+                  src="./images/Password.svg"
+                  class="form-item__icon"
+                  alt=""
+                />
+                <input
+                  type="password"
+                  id="password-input"
+                  name="password"
+                  placeholder="رمز عبور"
+                  class="form-item__input"
+                />
+              </div>
+
+              <div class="form-item">
+                <!-- SECURITY CODE -->
+                <img
+                  src="./images/Shield Done.png"
+                  class="form-item-security-icon"
+                  alt=""
+                />
+                <label
+                  for="security-code-input"
+                  class="form-item__security-message"
+                  >عبارت داخل کادر را وارد کنید</label
+                >
+                <div class="security-section">
+                  <input
+                    style="width: 80%"
+                    type="text"
+                    placeholder="کد امنیتی"
+                    class="security-section__security-code-input"
+                  />
+                  <img
+                    id="security-img"
+                    style="width: 50%"
+                    src="./images/validation-code.jpg"
+                    class="security-code-img"
+                  />
+                </div>
+              </div>
+              <a href="#">
+                <button class="login-form__submit" onclick="handleOTP()">
+                  ارسال کد
+                </button>
+              </a>
             </div>
-            <a href="../dashboard - page2 - DONE/index.html">
-              <button class="login-form__submit">ورود</button>
-            </a>
           </div>
         </div>
       </div>
+      <div class="page-image">
+        <img
+          src="./images/login-page-image.svg"
+          class="page-image__login-image"
+          alt=""
+        />
+      </div>
     </div>
-    <div class="page-image">
-      <img src="./images/login-page-image.svg" class="page-image__login-image" alt="">
+
+    <div class="code-input-page">
+      <img src="./images/setareaval.svg" id="code-input-logo">
+      <h1 class="code-input-page__title">ورود به پنل</h1>
+      <div class="code-input-page__hint">
+        <span class="hint__text"
+          >کد ارسالی به شماره ۰۹۱۲****۶۳۷ را وارد کنید</span
+        >
+        <span class="hint__second">۶۰ ثانیه</span>
+      </div>
+      <div class="code-input-page__code-holders">
+        <input type="number" pattern="\d" maxlength="1" class="code-holder" />
+        <input type="number" pattern="\d" maxlength="1" class="code-holder" />
+        <input type="number" pattern="\d" maxlength="1" class="code-holder" />
+        <input type="number" pattern="\d" maxlength="1" class="code-holder" />
+        <input type="number" pattern="\d" maxlength="1" class="code-holder" />
+        <input type="number" pattern="\d" maxlength="1" class="code-holder" />
+      </div>
+      <button class="login-form__submit-code" onclick="handleOTP()">
+        ورود
+      </button>
     </div>
-  </div>
+
+    <script>
+      var loginForm = document.querySelector("#login-form-desktop");
+      var loginFormMobile = document.querySelector("#login-form-mobile");
+      var codeInputContainer = document.querySelector(".code-input-page");
+      var setareLogo = document.querySelector('.logo');
+      function handleOTP() {
+        loginForm.style.display = "none";
+        loginFormMobile.style.display = "none";
+        codeInputContainer.style.display = "block";
+        setareLogo.style.display = 'none'
+      }
+
+      var container = document.getElementsByClassName("code-input-page__code-holders")[0];
+      container.onkeyup = function (e) {
+        var target = e.srcElement || e.target;
+        var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+        var myLength = target.value.length;
+        if (myLength >= maxLength) {
+          var next = target;
+          while ((next = next.nextElementSibling)) {
+            if (next == null) break;
+            if (next.tagName.toLowerCase() === "input") {
+              next.focus();
+              next.value = ''
+              break;
+            }
+          }
+        }
+        // Move to previous field if empty (user pressed backspace)
+        else if (myLength === 0) {
+          var previous = target;
+          while ((previous = previous.previousElementSibling)) {
+            if (previous == null) break;
+            if (previous.tagName.toLowerCase() === "input") {
+              previous.focus();
+              previous.value = ''
+              break;
+            }
+          }
+        }
+      };
 
 
 
-</body>
+
+
+      // SINA: USE SETINTERVAL FUNCTION TO REDUCE TIME
+    </script>
+  </body>
+</html>
